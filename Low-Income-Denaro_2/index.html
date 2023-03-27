@@ -1,0 +1,2426 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0,
+            maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <title>Low Income Health Care Card</title>
+
+        <link crossorigin="anonymous"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+            rel="stylesheet">
+        <link href="./styling.css" rel="stylesheet">
+        <link href="./progressbar.css" rel="stylesheet">
+        <link href="./loader.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="container-fluid my-2 text-center">
+            <div class="row" id="frontPage">
+                <div class="col-md-12 my-5">
+
+                    <img src='./logo.png' alt='logo' width="210px"
+                        height="210px">
+                </div>
+                <div class="col-md-12 my-5">
+                    <h1 class="bold text-success">LOW INCOME HEALTH CARE CARD
+                        CALCULATOR</h1>
+                </div>
+                <div class="col-md-12">
+                    <p>Our Low-Income Health Care Card Calculator can help you
+                        determine whether you meet the eligibility criteria for
+                        this card.</p>
+                    <button class="btn btn-success w-25"
+                        onclick="mainCalculate()"><i class="fa-solid
+                            fa-angles-right"></i> Start </button>
+                </div>
+
+
+            </div>
+            <div class="row d-none" id="mainCalculator">
+                <div class="col-md-12 d-none">
+                    <div class="row">
+                        <div class="col-md-2"> <img src='./logo.png' alt='logo'
+                                width="210px" height="210px" class="float-left"></div>
+                        <div class="col-md-8"><h1 class="bold mt-5 pt-5">Low
+                                Income Health Care Card Calculator </h1></div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-2"></div>
+
+                <div class="col-md-8">
+
+                    <div class="row" id="loaderDiv" style="display: none">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                            <h6 class="text-center">We are compiling the PDF for
+                                you please wait meanwhile explore results below</h6>
+                        </div>
+
+                    </div>
+                    <!--            left side main card-->
+                    <div class="card hello px-5 pb-5 pt-0">
+
+
+                        <div class="row justify-content-center"
+                            id="progressbarDiv">
+                            <div class="col-11 col-sm-9 col-md-12 col-lg-12
+                                col-xl-12 text-center p-0 mb-2">
+                                <div class="card px-0 pb-0 mb-3" style="z-index:
+                                    0;border: none;position: relative;">
+                                    <form id="msform">
+                                        <!-- progressbar -->
+                                        <ul id="progressbar">
+                                            <li class="active1" id="personal"><strong>Personal
+                                                    Info</strong></li>
+
+                                            <li id="gift"><strong>Gifts</strong></li>
+                                            <li id="question"><strong>Lumpsum
+                                                    Payments </strong></li>
+                                            <li id="incomeStream"><strong>Centrelink
+                                                    Benefits</strong></li>
+                                            <li id="investment"><strong>Financial
+                                                    Investment</strong></li>
+
+                                            <li id="properties"><strong>Direct
+                                                    Investment Properties</strong></li>
+                                        </ul>
+                                        <ul id="progressbar2">
+                                            <li id="lifetimeIncome"><strong>
+                                                    Lifetime Income Stream</strong></li>
+                                            <li id="workingIncome"><strong>Income
+                                                    from Working</strong></li>
+                                            <li id="otherIncome"><strong>Other
+                                                    Income</strong></li>
+                                            <li id="result"><strong>Results
+                                                </strong></li>
+
+                                        </ul>
+
+                                        <br>
+                                    </form>
+                                    <div class="progress">
+                                        <div aria-valuemax="80"
+                                            aria-valuemin="0"
+                                            class="progress-bar
+                                            progress-bar-striped
+                                            progress-bar-animated"
+                                            role="progressbar"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row mt-3" id="step-0">
+                            <div class="col-md-12">
+                                <h4 class="bold mb-5 green">Personal Info</h4>
+                                <label for="relationshipStatus1">What is your
+                                    relationship status?</label>
+
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 mt-2">
+                                        <input checked class="form-check-input"
+                                            id="relationshipStatus1"
+                                            name="relationshipStatus"
+                                            onchange="relationship(this.value)"
+                                            type="radio"
+                                            value="1">
+                                        <label class="form-check-label"
+                                            for="relationshipStatus1">
+                                            <img alt="img"
+                                                class="img-responsive"
+                                                src="./single-2.svg"
+                                                width="40%">
+                                            Single</label>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 mt-2">
+                                        <input class="form-check-input"
+                                            id="relationshipStatus2"
+                                            name="relationshipStatus"
+                                            onchange="relationship(this.value)"
+                                            type="radio" value="2">
+
+                                        <label class="form-check-label"
+                                            for="relationshipStatus2">
+                                            <img alt="img"
+                                                class="img-responsive"
+                                                src="./couple-2.svg"
+                                                width="40%">
+                                            Couple</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <div class="card h-100 p-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img alt="img" class="img-responsive
+                                                w-100" src="./calendar.svg">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <label for="husbandDOB">What is your
+                                                DOB?</label>
+                                            <input class="form-control"
+                                                id="husbandDOB"
+                                                name="husbandDOB"
+                                                placeholder="mm-dd-yyyy"
+                                                type="date">
+                                            <br>
+                                            <div class="wife">
+                                                <label for="wifeDOB">What is
+                                                    your partner's DOB?</label>
+                                                <input class="form-control"
+                                                    id="wifeDOB" name="wifeDOB"
+                                                    placeholder="mm-dd-yyyy"
+                                                    type="date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <button class="btn btn-success float-right
+                                    col-md-4" onclick="step(1)">
+                                    <i class="fas fa-angle-double-right"></i>
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-3" id="step-1">
+                            <div class="col-md-12">
+                                <h3 class="mt-2 green">Gifts</h3>
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+
+                                <img alt="home" class="img-fluid"
+                                    src="./gift.svg" width="10%">
+                                <br>
+                                <label>In the last 5 years, have you (and/or
+                                    your partner) given away, sold for less than
+                                    their
+                                    market value
+
+                                    or surrendered a right to any cash, assets,
+                                    property or income?</label>
+                                <div style="text-align: center;margin-top:5%">
+                                    <input checked id="giftNo" name="gift"
+                                        onchange="giftOptions(this.value)"
+                                        type="radio"
+                                        value="0">
+                                    <label for="giftNo">No</label>
+                                    <input id="giftYes" name="gift"
+                                        onchange="giftOptions(this.value)"
+                                        type="radio" value="1">
+                                    <label for="giftYes">Yes</label>
+
+                                    <br>
+                                </div>
+
+                                <br>
+
+                                <p class="text-center giftOptionsExtended">Gifting
+                                    happens when you either give away assets or
+                                    sell them at less than their
+                                    market value. The most you can gift without
+                                    affecting your payments is $10,000 in 1
+                                    financial year, but this cannot exceed
+                                    $30,000 over 5 financial years.</p>
+
+                                <label class="giftOptionsExtended">In the Last 5
+                                    years have you or (and/or your partner)
+                                    gifted
+                                    any assets over these amounts?</label>
+                                <div class="giftOptionsExtended"
+                                    style="text-align: center;margin-top:5%">
+                                    <input checked id="giftExtendedNo"
+                                        name="giftExtended"
+                                        onchange="giftOptionsExtended(this.value)"
+                                        type="radio" value="0">
+                                    <label for="giftExtendedNo">No</label>
+                                    <input id="giftExtendedYes"
+                                        name="giftExtended"
+                                        onchange="giftOptionsExtended(this.value)"
+                                        type="radio"
+                                        value="1">
+                                    <label for="giftExtendedYes">Yes</label>
+                                    <br>
+                                </div>
+
+                                <br>
+
+
+                                <p class="text-center giftOptionsExtendedEnds">
+                                    As the amounts you have gifted over the last
+                                    5 years are over the allowable limits this
+                                    will
+                                    affect your entitlements and our Low income
+                                    health care calculator isn’t able to
+                                    determine
+                                    your exact eligibility. If you select no to
+                                    this question the estimated results will not
+                                    be
+                                    accurate at all.
+                                </p>
+                                <br>
+
+                                <p class="giftOptionsExtendedEnds"> Please
+                                    contact us at <a
+                                        href="mailto:denarolink@denarowealth.com.au">denarolink@denarowealth.com.au</a>
+                                    for further information and
+                                    speak to one of our Centrelink specialists
+                                    who will be able to assist you further and
+                                    provide you with a more accurate estimate of
+                                    your entitlements.
+                                </p>
+
+                                <br>
+
+
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <button class="btn btn-dark float-left col-md-4"
+                                    onclick="step(0)">
+                                    <i class="fas fa-angle-double-left"></i>
+                                    Previous
+                                </button>
+
+                                <button class="btn btn-success float-right
+                                    col-md-4" id="giftBTN" onclick="step(2)">
+                                    <i class="fas fa-angle-double-right"></i>
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3" id="step-2">
+
+                            <div class="col-md-12 mt-3 ">
+                                <!--                        <h3 class="mt-2 green">Companies or Trusts</h3>-->
+                                <label for="businessIncomeOptions1">Have you
+                                    received any of the following payments in
+                                    the last
+                                    12 months?</label>
+                                <!--                        <ul>-->
+                                <p class="text-center">- Compensation Payments</p>
+                                <p class="text-center">- Redundancy Payments</p>
+                                <p class="text-center">- Lump Sum Leave Payments</p>
+                                <!--                        </ul>-->
+
+                                <div style="text-align: center;margin-top:5%">
+                                    <input checked id="businessIncomeOptions2"
+                                        name="businessIncomeOptions"
+                                        onchange="businessIncomeOptions(this.value)"
+                                        type="radio" value="0">
+                                    <label for="businessIncomeOptions2">No</label>
+                                    <input id="businessIncomeOptions1"
+                                        name="businessIncomeOptions"
+                                        onchange="businessIncomeOptions(this.value)"
+                                        type="radio"
+                                        value="1">
+                                    <label for="businessIncomeOptions1">Yes</label>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 businessIncomeOptions mt-3">
+                                <p>
+                                    As you have received a lump-sum payment in
+                                    the last 12 months we aren’t able to
+                                    determine
+                                    your
+                                    eligibility to the Low income health care
+                                    card. Centrelink assess lump-sum payments
+                                    according to
+                                    a number of different factors and given the
+                                    complex nature this calculator isn’t able to
+                                    determine your
+                                    eligibility. Please contact us at <a
+                                        href="mailto:denarolink@denarowealth.com.au">denarolink@denarowealth.com.au</a>
+                                    for further information and speak to one of
+                                    our Centrelink specialists who will be able
+                                    to assist you further.
+                                </p>
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <button class="btn btn-dark float-left col-md-4"
+                                    onclick="step(1)">
+                                    <i class="fas fa-angle-double-left"></i>
+                                    Previous
+                                </button>
+
+                                <button class="btn btn-success float-right
+                                    col-md-4" onclick="step(3)">
+                                    <i class="fas fa-angle-double-right"></i>
+                                    Next
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3" id="step-3">
+
+                            <div class="col-md-12 mt-3">
+                                <h3 class="mt-2 green"></h3>
+                                <label>Do you receive any Benefits/Pensions from
+                                    Centrelink?
+                                    <i class="fas fa-question-circle"
+                                        data-toggle="tooltip"
+                                        title="This can include the
+                                        Age/Disability Support /Carers Pensions
+                                        of Jobseeker Payments."></i>
+                                </label>
+
+
+                                <div style="text-align: center;margin-top:5%">
+                                    <input checked id="benefits2"
+                                        name="benefits"
+                                        onchange="benefits(this.value)"
+                                        type="radio" value="0">
+                                    <label for="benefits2">No</label>
+
+                                    <input id="benefits1" name="benefits"
+                                        onchange="benefits(this.value)"
+                                        type="radio"
+                                        value="1">
+                                    <label for="benefits1">Yes</label>
+
+                                    <br>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 benefits mt-3">
+                                <div class="card h-100 p-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img alt="img" class="img-responsive
+                                                w-100" src="./benefits.svg">
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <h4 class="text-center">Centrelink
+                                                Pensions/Benefits</h4>
+                                            <label for="centreLinkBenefits">You</label>
+                                            <input class="form-control"
+                                                id="centreLinkBenefits"
+                                                name="centreLinkBenefits"
+                                                onkeyup="format(this)"
+                                                placeholder="Please Enter Value in $" type="text">
+
+                                            <div class="wife">
+                                                <label
+                                                    for="centreLinkBenefitsWife">Partner</label>
+                                                <input class="form-control"
+                                                    id="centreLinkBenefitsWife"
+                                                    name="centreLinkBenefitsWife"
+                                                    onkeyup="format(this)"
+                                                    placeholder="Please Enter
+                                                    Value in $" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <button class="btn btn-dark float-left col-md-4"
+                                    onclick="step(2)">
+                                    <i class="fas fa-angle-double-left"></i>
+                                    Previous
+                                </button>
+
+                                <button class="btn btn-success float-right
+                                    col-md-4" onclick="step(4)">
+                                    <i class="fas fa-angle-double-right"></i>
+                                    Next
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3" id="step-4">
+                            <div class="col-md-12">
+                                <h3 class="mt-2 green">Financial Investment</h3>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <div class="card h-100 p-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img alt="img" class="img-responsive
+                                                w-100" src="./bank.svg">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4 class="text-center mb-1">Saving
+                                                Accounts/Term Deposits</h4>
+                                            <label for="husbandSavingsAccounts">You</label>
+                                            <input class="form-control"
+                                                id="husbandSavingsAccounts"
+                                                name="husbandSavingsAccounts"
+                                                onkeyup="format(this)"
+                                                placeholder="Please Enter Value in $" type="text">
+                                            <br>
+                                            <div class="wife">
+                                                <label
+                                                    for="wifeSavingsAccounts">Partner</label>
+                                                <input class="form-control"
+                                                    id="wifeSavingsAccounts"
+                                                    name="wifeSavingsAccounts"
+                                                    onkeyup="format(this)"
+                                                    placeholder="Please Enter
+                                                    Value in $" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <div class="card h-100 p-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img alt="img" class="img-responsive
+                                                w-100" src="./piggy-bank.svg">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4 class="text-center">Super
+                                                Balance
+                                                <i class="fas
+                                                    fa-question-circle"
+                                                    data-toggle="tooltip"
+                                                    title="Please add in the
+                                                    combined value of all the
+                                                    money you have in your super
+                                                    accounts including any
+                                                    funds you have in a Self
+                                                    Managed Super Fund (SMSF).
+                                                    Do not include any money
+                                                    that you have in
+                                                    an account based pension."></i>
+                                            </h4>
+                                            <label for="husbandSuperAnnaution">You</label>
+                                            <input class="form-control"
+                                                id="husbandSuperAnnaution"
+                                                name="husbandSuperAnnaution"
+                                                onkeyup="format(this)"
+                                                placeholder="Please Enter Value in $" type="text">
+                                            <br>
+                                            <div class="wife">
+                                                <label for="wifeSuperAnnaution">Partner</label>
+                                                <input class="form-control"
+                                                    id="wifeSuperAnnaution"
+                                                    name="wifeSuperAnnaution"
+                                                    onkeyup="format(this)"
+                                                    placeholder="Please Enter
+                                                    Value in $" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <div class="card h-100 p-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img alt="img" class="img-responsive
+                                                w-100"
+                                                src="./piggy-bank-new.svg">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4 class="text-center">Account
+                                                Based Pensions
+                                                <i class="fas
+                                                    fa-question-circle"
+                                                    data-toggle="tooltip"
+                                                    title="Please add in the
+                                                    combined value of all the
+                                                    money you have in your
+                                                    account based pensions
+                                                    including any funds you have
+                                                    in a pension account within
+                                                    a Self Managed Super Fund
+                                                    (SMSF)
+                                                    where you receive a regular
+                                                    payment from."></i>
+                                            </h4>
+                                            <label for="husbandPension">You</label>
+                                            <input class="form-control"
+                                                id="husbandPension"
+                                                name="husbandPension"
+                                                onkeyup="format(this)"
+                                                placeholder="Please Enter Value in $" type="text">
+                                            <br>
+                                            <div class="wife">
+                                                <label for="wifePension">Partner</label>
+                                                <input class="form-control"
+                                                    id="wifePension"
+                                                    name="wifePension"
+                                                    onkeyup="format(this)"
+                                                    placeholder="Please Enter
+                                                    Value in $" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <div class="card h-100 p-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img alt="img" class="img-responsive
+                                                w-100" src="./portfolio.svg">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4 class="text-center">Direct
+                                                Shares </h4>
+                                            <label for="husbandPortfolio">You</label>
+                                            <input class="form-control"
+                                                id="husbandPortfolio"
+                                                name="husbandPortfolio"
+                                                onkeyup="format(this)"
+                                                placeholder="Please Enter Value in $" type="text">
+                                            <br>
+                                            <div class="wife">
+                                                <label for="wifePortfolio">Partner</label>
+                                                <input class="form-control"
+                                                    id="wifePortfolio"
+                                                    name="wifePortfolio"
+                                                    onkeyup="format(this)"
+                                                    placeholder="Please Enter
+                                                    Value in $" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <div class="card h-100 p-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img alt="img" class="img-responsive
+                                                w-100" src="./funds.svg">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4 class="text-center">Managed
+                                                Funds</h4>
+                                            <label for="husbandFunds">You</label>
+                                            <input class="form-control"
+                                                id="husbandFunds"
+                                                name="husbandFunds"
+                                                onkeyup="format(this)"
+                                                placeholder="Please Enter Value in $" type="text">
+                                            <br>
+                                            <div class="wife">
+                                                <label for="wifeFunds">Partner</label>
+                                                <input class="form-control"
+                                                    id="wifeFunds"
+                                                    name="wifeFunds"
+                                                    onkeyup="format(this)"
+                                                    placeholder="Please Enter
+                                                    Value in $" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 mt-3">
+                                <button class="btn btn-dark float-left col-md-4"
+                                    onclick="step(3)">
+                                    <i class="fas fa-angle-double-left"></i>
+                                    Previous
+                                </button>
+
+                                <button class="btn btn-success float-right
+                                    col-md-4" onclick="step(5)">
+                                    <i class="fas fa-angle-double-right"></i>
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row mt-3" id="step-5">
+                            <div class="col-md-12">
+                                <h3 class="mt-2 green">Direct Investment
+                                    Properties</h3>
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <label for="rentOptions1">Do you receive any
+                                    rental income ?</label>
+
+                                <div style="text-align: center; margin-top:
+                                    5%;">
+                                    <input checked id="rentOptions2"
+                                        name="rentOptions"
+                                        onchange="rentOptions(this.value)"
+                                        type="radio" value="0"/>
+                                    <label for="rentOptions2">No</label>
+                                    <input id="rentOptions1" name="rentOptions"
+                                        onchange="rentOptions(this.value)"
+                                        type="radio"
+                                        value="1"/>
+                                    <label for="rentOptions1">Yes</label>
+
+                                    <br/>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 rentOptions mt-3">
+                                    <div class="card h-100 p-4">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img alt="img"
+                                                    class="img-responsive w-100"
+                                                    src="./rent.svg"/>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h4 class="text-center">Frequency</h4>
+                                                <label class="rentOptions"
+                                                    for="rentFrequency"></label>
+                                                <select class="form-control
+                                                    rentOptions"
+                                                    id="rentFrequency"
+                                                    name="rentFrequency">
+                                                    <option selected
+                                                        value="monthly">Monthly</option>
+                                                    <option value="weekly">Weekly</option>
+                                                </select>
+                                                <br/>
+                                                    <h4 class="text-center">Monthly
+                                                        Rental Income</h4>
+                                                    <label
+                                                        for="secondPropertyRentalIncome"></label>
+                                                    <input class="form-control"
+                                                        id="secondPropertyRentalIncome"
+                                                        name="secondPropertyRentalIncome"
+                                                        onkeyup="format(this)"
+                                                        placeholder="Please
+                                                        Enter Value in $"
+                                                        type="text"/>
+
+                                                    <br/>
+                                                        <h4 class="text-center">
+                                                            Annual Expenses
+                                                            <i
+                                                                class="fas
+                                                                fa-question-circle"
+                                                                data-toggle="tooltip"
+                                                                title="This
+                                                                includes,
+                                                                interest on the
+                                                                loan, council
+                                                                and water rates,
+                                                                insurances/body
+                                                                corporate fees,
+                                                                land tax,
+                                                                repairs and
+                                                                maintenance."></i>
+                                                        </h4>
+                                                        <label
+                                                            for="secondPropertyAnnualExpense"></label>
+                                                        <input
+                                                            class="form-control"
+                                                            id="secondPropertyAnnualExpense"
+                                                            name="secondPropertyAnnualExpense"
+                                                            onkeyup="format(this)"
+                                                            placeholder="Please
+                                                            Enter Value in $"
+                                                            type="text"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 mt-3">
+                                            <button class="btn btn-dark
+                                                float-left col-md-4"
+                                                onclick="step(4)">
+                                                <i class="fas
+                                                    fa-angle-double-left"></i>
+                                                Previous
+                                            </button>
+
+                                            <button class="btn btn-success
+                                                float-right col-md-4"
+                                                onclick="step(6)">
+                                                <i class="fas
+                                                    fa-angle-double-right"></i>
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3" id="step-6">
+                                        <div class="col-md-12">
+                                            <h3 class="mt-2 green">Lifetime
+                                                Income Stream </h3>
+                                        </div>
+                                        <div class="col-md-12 mt-3">
+                                            <label for="yourOtherIncomeStream1">Do
+                                                you have any other Lifetime
+                                                Income Streams?
+                                                <i class="fas
+                                                    fa-question-circle"
+                                                    data-toggle="tooltip"
+                                                    title="This is where you
+                                                    receive regular payments
+                                                    often on a fortnightly basis
+                                                    that will continue until
+                                                    you die. In some cases, if
+                                                    you die before your partner
+                                                    they may continue to receive
+                                                    a
+                                                    payment in a reduced
+                                                    amount."></i>
+                                            </label>
+
+                                            <div style="text-align:
+                                                center;margin-top:5%">
+                                                <input checked
+                                                    id="yourOtherIncomeStream2"
+                                                    name="yourOtherIncomeStream"
+                                                    onchange="yourOtherIncomeOptions(this.value)"
+                                                    type="radio" value="0">
+                                                <label
+                                                    for="yourOtherIncomeStream2">No</label>
+                                                <input
+                                                    id="yourOtherIncomeStream1"
+                                                    name="yourOtherIncomeStream"
+                                                    onchange="yourOtherIncomeOptions(this.value)"
+                                                    type="radio"
+                                                    value="1">
+                                                <label
+                                                    for="yourOtherIncomeStream1">Yes</label>
+                                                <br>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12
+                                            yourOtherIncomeOptions mt-3">
+                                            <div class="card h-100 p-4">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <img alt="img"
+                                                            class="img-responsive
+                                                            w-100"
+                                                            src="./money-3.svg">
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <h4 class="text-center">
+                                                            Other Income Stream
+                                                            Income</h4>
+                                                        <label
+                                                            for="yourAnnualPension">You</label>
+                                                        <input
+                                                            class="form-control"
+                                                            id="yourAnnualPension"
+                                                            name="yourAnnualPension"
+                                                            onkeyup="format(this)"
+                                                            placeholder="Please
+                                                            Enter Value in $"
+                                                            type="text">
+
+                                                        <div class="wife">
+                                                            <label
+                                                                for="yourAnnualPensionWife">Partner
+                                                            </label>
+                                                            <input
+                                                                class="form-control"
+                                                                id="yourAnnualPensionWife"
+                                                                name="yourAnnualPensionWife"
+                                                                onkeyup="format(this)"
+                                                                placeholder="Please
+                                                                Enter Value in $" type="text">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12
+                                            yourOtherIncomeOptions mt-3">
+                                            <div class="card h-100 p-4">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <img alt="img"
+                                                            class="img-responsive
+                                                            w-100"
+                                                            src="./paper-bill.svg">
+                                                    </div>
+                                                    <div class="col-md-8">
+
+                                                        <h4 class="text-center">Centrelink
+                                                            Deductible Amount
+                                                            <i class="fas
+                                                                fa-question-circle"
+                                                                data-toggle="tooltip"
+                                                                title="You can
+                                                                find this
+                                                                information by
+                                                                contacting your
+                                                                product
+                                                                provider. If you
+                                                                don’t know this
+                                                                amount or are
+                                                                unsure leave
+                                                                this section
+                                                                blank and our
+                                                                calculator will
+                                                                understate
+                                                                the amount you
+                                                                may receive
+                                                                under the income
+                                                                test."></i>
+                                                        </h4>
+                                                        <label
+                                                            for="yourAnnualDeductible">You</label>
+                                                        <input
+                                                            class="form-control"
+                                                            id="yourAnnualDeductible"
+                                                            name="yourAnnualDeductible"
+                                                            onkeyup="format(this)"
+                                                            placeholder="Please
+                                                            Enter Value in $"
+                                                            type="text">
+
+                                                        <div class="wife">
+                                                            <label
+                                                                for="yourAnnualDeductibleWife">Partner
+                                                            </label>
+                                                            <input
+                                                                class="form-control"
+                                                                id="yourAnnualDeductibleWife"
+                                                                name="yourAnnualDeductibleWife"
+                                                                onkeyup="format(this)"
+                                                                placeholder="Please
+                                                                Enter Value in $" type="text">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12 mt-3">
+                                            <button class="btn btn-dark
+                                                float-left col-md-4"
+                                                onclick="step(5)">
+                                                <i class="fas
+                                                    fa-angle-double-left"></i>
+                                                Previous
+                                            </button>
+
+                                            <button class="btn btn-success
+                                                float-right col-md-4"
+                                                onclick="step(7)">
+                                                <i class="fas
+                                                    fa-angle-double-right"></i>
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3" id="step-7">
+
+                                        <div class="col-md-12 mt-3">
+                                            <h3 class="mt-2 green">Income from
+                                                Working</h3>
+                                            <label for="workingIncome1">Do you
+                                                receive any income from working
+                                                including any self-employed
+                                                income as a sole trader or via a
+                                                partnership?
+                                                <i class="fas
+                                                    fa-question-circle"
+                                                    data-toggle="tooltip"
+                                                    title=" If you are employed
+                                                    please enter in your total
+                                                    gross salary including any
+                                                    salary sacrifice amounts. If
+                                                    you are self-employed please
+                                                    enter in your share of the
+                                                    net business income."></i></label>
+                                            <div style="text-align:
+                                                center;margin-top:5%">
+                                                <input checked
+                                                    id="workingIncome2"
+                                                    name="workingIncome"
+                                                    onchange="workingIncomeOptions(this.value)"
+                                                    type="radio" value="0">
+                                                <label for="workingIncome2">No</label>
+                                                <input id="workingIncome1"
+                                                    name="workingIncome"
+                                                    onchange="workingIncomeOptions(this.value)"
+                                                    type="radio"
+                                                    value="1">
+                                                <label for="workingIncome1">Yes</label>
+                                                <br>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12
+                                            workingIncomeOptions mt-3">
+                                            <div class="card h-100 p-4">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <img alt="img"
+                                                            class="img-responsive
+                                                            w-100"
+                                                            src="./businessman.svg">
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <h4 class="text-center">Gross
+                                                            Salary /Net Business
+                                                            Income</h4>
+                                                        <label
+                                                            for="grossSalary">You</label>
+                                                        <input
+                                                            class="form-control"
+                                                            id="grossSalary"
+                                                            name="grossSalary"
+                                                            onkeyup="format(this)"
+                                                            placeholder="Please
+                                                            Enter Value in $"
+                                                            type="text">
+                                                        <div class="wife">
+                                                            <label
+                                                                for="grossSalaryWife">Partner</label>
+                                                            <input
+                                                                class="form-control"
+                                                                id="grossSalaryWife"
+                                                                name="grossSalaryWife"
+                                                                onkeyup="format(this)"
+                                                                placeholder="Please
+                                                                Enter Value in $" type="text">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12 mt-3">
+                                            <button class="btn btn-dark
+                                                float-left col-md-4"
+                                                onclick="step(6)">
+                                                <i class="fas
+                                                    fa-angle-double-left"></i>
+                                                Previous
+                                            </button>
+                                            <button class="btn btn-success
+                                                float-right col-md-4"
+                                                onclick="step(8)">
+                                                <i class="fas
+                                                    fa-angle-double-right"></i>
+                                                Next
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mt-3" id="step-8">
+
+                                        <div class="col-md-12 mt-3">
+                                            <h3 class="mt-2 green">Other Income</h3>
+                                            <label for="workingIncome1">Do you
+                                                receive any other income from
+                                                other sources such as
+                                                overseas pensions?
+                                            </label>
+
+
+                                            <div style="text-align:
+                                                center;margin-top:5%">
+                                                <input checked
+                                                    id="otherIncomeOptions2"
+                                                    name="otherIncomeOptions"
+                                                    onchange="otherIncomeOptions(this.value)"
+                                                    type="radio" value="0">
+                                                <label
+                                                    for="otherIncomeOptions2">No</label>
+                                                <input id="otherIncomeOptions1"
+                                                    name="otherIncomeOptions"
+                                                    onchange="otherIncomeOptions(this.value)"
+                                                    type="radio"
+                                                    value="1">
+                                                <label
+                                                    for="otherIncomeOptions1">Yes</label>
+                                                <br>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12 otherIncomeOptions
+                                            mt-3">
+                                            <div class="card h-100 p-4">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <img alt="img"
+                                                            class="img-responsive
+                                                            w-100"
+                                                            src="./overseas.svg">
+                                                    </div>
+
+                                                    <div class="col-md-8">
+                                                        <h4 class="text-center">Overseas
+                                                            Pension/Other Income</h4>
+                                                        <label
+                                                            for="overseasIncome">You</label>
+                                                        <input
+                                                            class="form-control"
+                                                            id="overseasIncome"
+                                                            name="overseasIncome"
+                                                            onkeyup="format(this)"
+                                                            placeholder="Please
+                                                            Enter Value in $"
+                                                            type="text">
+
+                                                        <div class="wife">
+                                                            <label
+                                                                for="overseasIncomeWife">Partner</label>
+                                                            <input
+                                                                class="form-control"
+                                                                id="overseasIncomeWife"
+                                                                name="overseasIncomeWife"
+                                                                onkeyup="format(this)"
+                                                                placeholder="Please
+                                                                Enter Value in $" type="text">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 mt-3">
+                                            <button class="btn btn-dark
+                                                float-left col-md-4"
+                                                onclick="step(7)">
+                                                <i class="fas
+                                                    fa-angle-double-left"></i>
+                                                Previous
+                                            </button>
+                                            <button class="btn btn-success
+                                                float-right col-md-4"
+                                                data-target="#staticBackdrop"
+                                                data-toggle="modal"
+                                                type="button">
+                                                <i class="fas fa-print"></i>
+                                                Results
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row mt-3" id="step-9">
+
+
+                                        <div class="col-md-12 mt-5
+                                            results-main">
+                                            <div class="text-center">
+                                                <h3 class="text-center green
+                                                    bold">Your Results</h3>
+                                                <br>
+                                                <h5 class="text-center my-4
+                                                    verdict">You meet the
+                                                    relevant income test</h5>
+                                                <img alt="xyz" class="w-75
+                                                    img-fluid my-4"
+                                                    src="./lowincome-card.jpg"/>
+                                                <br/>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 mt-3
+                                                results-main">
+                                                <div class="text-center">
+                                                    <h5 class="text-center"
+                                                        style="font-size: 16px">
+                                                        Actual Income over 8
+                                                        Weeks</h5>
+                                                    <p class="bold"
+                                                        id="totalIncome1">$0</p>
+                                                    <h5 class="text-center"
+                                                        style="font-size: 16px">
+                                                        Income Threshold for the
+                                                        8 Weeks
+                                                        period</h5>
+                                                    <p class="bold"
+                                                        id="incomeThreshold1">$0</p>
+                                                    <h5 class="text-center"
+                                                        style="font-size: 16px">
+                                                        Income over/under over 8
+                                                        Weeks for income
+                                                        test purposes</h5>
+                                                    <p class="bold"
+                                                        id="incomeOverORUnder1">No</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12"
+                                                id="frontPage" style="display:
+                                                none">
+                                                <div class="front-page mt-5">
+                                                    <div class="header">
+                                                        <h1 class="text-right"><img
+                                                                alt="logo"
+                                                                class="img-fluid
+                                                                w-25"
+                                                                src="./svgtopng/final-logo.png"/></h1>
+                                                        <h3 class="blue
+                                                            text-center"
+                                                            style="margin-top:
+                                                            40%;">LOW INCOME
+                                                            HEALTH CARE CARD
+                                                            CALCULATOR REPORT</h3>
+                                                    </div>
+                                                    <div class="greenbar mb-1"
+                                                        style="border: 1px solid
+                                                        #36b446;"></div>
+                                                    <div class="footer
+                                                        text-center bold"
+                                                        style="margin-top: 44%;
+                                                        padding-top: 6%;
+                                                        font-size: 10px;">
+                                                        <p class="m-0 p-0">www.denarolink.com.au</p>
+                                                        <p class="m-0 p-0">Denaro
+                                                            Link is a service of
+                                                            Denaro Wealth Pty
+                                                            Ltd</p>
+                                                        <p class="m-0 p-0">2023
+                                                            Denaro Wealth Pty
+                                                            Ltd. All Rights
+                                                            Reserved</p>
+                                                        <p class="m-0 p-0">Denaro
+                                                            Wealth Pty Ltd is an
+                                                            authorised
+                                                            representative of
+                                                            Lifespan
+                                                            Financial Planning
+                                                            Pty Ltd ASFL 229892</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12 mt-5 results"
+                                                id="ResultsClass">
+                                                <h3 class="text-center green
+                                                    bold">Your Results</h3>
+                                                <br>
+                                                <div class="text-center">
+                                                    <h5 class="text-center mb-4
+                                                        mt-2 verdict">You meet
+                                                        the relevant income test</h5>
+                                                    <h5 class="text-center"
+                                                        style="font-size: 16px">
+                                                        Actual Income over 8
+                                                        Weeks</h5>
+                                                    <p class="bold"
+                                                        id="totalIncome">$0</p>
+                                                    <h5 class="text-center"
+                                                        style="font-size: 16px">
+                                                        Income Threshold for the
+                                                        8 Weeks
+                                                        period</h5>
+                                                    <p class="bold"
+                                                        id="incomeThreshold">$0</p>
+                                                    <h5 class="text-center"
+                                                        style="font-size: 16px">
+                                                        Income over/under over 8
+                                                        Weeks for income
+                                                        test purposes</h5>
+                                                    <p class="bold"
+                                                        id="incomeOverORUnder">No</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-12 mt-3">
+                                                <div class="text-center results"
+                                                    id="ResultsClass1">
+                                                    <h4 class="blue
+                                                        text-center">Low income
+                                                        Health Care Card </h4>
+                                                    <img alt="xyz" class="w-75
+                                                        img-fluid my-1"
+                                                        src="./lowincome-card.jpg"/>
+                                                    <br/>
+
+                                                    </div>
+
+                                                    <div class="mt-3"
+                                                        id="optionalContent"
+                                                        style="display: none">
+                                                        <p class="text-justify
+                                                            mt-2">The Low-income
+                                                            Health Care Card
+                                                            entitles you to the
+                                                            following:</p>
+                                                        <ul>
+                                                            <li>cheaper medicine
+                                                                under the
+                                                                Pharmaceutical
+                                                                Benefits Scheme</li>
+                                                            <li>bulk billed
+                                                                doctor visits -
+                                                                this is up to
+                                                                your doctor</li>
+                                                            <li>a bigger refund
+                                                                for medical
+                                                                costs when you
+                                                                reach the
+                                                                Medicare Safety
+                                                                Net.</li>
+                                                            <li>Your state or
+                                                                territory
+                                                                government and
+                                                                local council
+                                                                may offer you
+                                                                more. You will
+                                                                need
+                                                                to
+                                                                check with the
+                                                                relevant
+                                                                agencies. They
+                                                                additional
+                                                                concessions may
+                                                                include:
+                                                                <ul>
+                                                                    <li>electricity
+                                                                        and gas
+                                                                        bills</li>
+                                                                    <li>property
+                                                                        and
+                                                                        water
+                                                                        rates</li>
+                                                                    <li>public
+                                                                        transport
+                                                                        fare</li>
+                                                                    <li>motor
+                                                                        vehicle
+                                                                        registration.</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="text-justify
+                                                        d-hidden">
+                                                        Deeming is the term
+                                                        which describes the
+                                                        method used by
+                                                        Centrelink and Veteran’s
+                                                        Affairs to
+                                                        calculate your
+                                                        assessable income from
+                                                        certain investments when
+                                                        determining the level of
+                                                        entitlement to be paid.
+                                                    </p>
+
+                                                    <div
+                                                        class="html2pdf__page-break">
+                                                        <div class="greenbar
+                                                            mb-1 results"
+                                                            id="ResultsClass2"
+                                                            style="border: 1px
+                                                            solid #36b446;"></div>
+                                                    </div>
+
+
+                                                    <h4 class="blue text-center
+                                                        fira bold mb-1">Let
+                                                        Denaro Link Help You.</h4>
+                                                    <div class="gray-bg p-4">
+                                                        <h4 class="text-center
+                                                            fira bold">WE DON’T
+                                                            JUST FILL IN FORMS.
+                                                            <br>
+                                                            WE GO TO BAT FOR YOU
+                                                            WITH CENTRELINK
+                                                        </h4>
+                                                        <p class="pl-2 mt-2
+                                                            text-center"
+                                                            style="font-size:
+                                                            12px">
+                                                            we’ll guide you
+                                                            through the process
+                                                            and deal with
+                                                            Centrelink on your
+                                                            behalf
+                                                        </p>
+                                                        <div class="row">
+                                                            <div
+                                                                class="col-md-4">
+                                                                <h6 class="blue
+                                                                    text-center">
+                                                                    <img
+                                                                        alt="POM"
+                                                                        class="img-fluid
+                                                                        w-25"
+                                                                        src="./svgtopng/3.png">
+                                                                    <br>
+                                                                    CONVENIENCE</h6>
+                                                                <br>
+                                                                <p
+                                                                    class="text-justify
+                                                                    PDFp">We’ll
+                                                                    look after
+                                                                    all the
+                                                                    face-to-face
+                                                                    and phone
+                                                                    conversations
+                                                                    with
+                                                                    Centrelink
+                                                                    and submit
+                                                                    your
+                                                                    paperwork.</p>
+                                                            </div>
+                                                            <div
+                                                                class="col-md-4">
+                                                                <h6 class="blue
+                                                                    text-center">
+                                                                    <img
+                                                                        alt="POM"
+                                                                        class="img-fluid"
+                                                                        src="./svgtopng/2.png"
+                                                                        width="30%">
+                                                                    <br>
+                                                                    CONFIDENCE</h6>
+                                                                <br>
+                                                                <p
+                                                                    class="text-justify
+                                                                    PDFp">
+                                                                    Be certain
+                                                                    you’re
+                                                                    getting the
+                                                                    maximum
+                                                                    Centrelink
+                                                                    entitlements
+                                                                    and seniors
+                                                                    discounts
+                                                                    you’re
+                                                                    eligible
+                                                                    for.
+                                                                </p>
+
+                                                            </div>
+                                                            <div
+                                                                class="col-md-4">
+                                                                <h6 class="blue
+                                                                    text-center">
+                                                                    <img
+                                                                        alt="POM"
+                                                                        class="img-fluid"
+                                                                        src="./svgtopng/1.png"
+                                                                        width="30%">
+                                                                    <br>
+                                                                    PEACE OF
+                                                                    MIND</h6>
+                                                                <br>
+                                                                <p
+                                                                    class="text-justify
+                                                                    PDFp">
+                                                                    Go on and
+                                                                    enjoy this
+                                                                    exciting
+                                                                    time
+                                                                    of your
+                                                                    life. Rest
+                                                                    easy knowing
+                                                                    that
+                                                                    an
+                                                                    experienced
+                                                                    team of
+                                                                    specialists
+                                                                    has your
+                                                                    back.
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12
+                                                            mt-3"
+                                                            style="font-family:
+                                                            'Fira Sans
+                                                            Condensed',
+                                                            sans-serif;">
+                                                            <h5 class="blue
+                                                                text-center"
+                                                                style="font-size:
+                                                                17px">
+                                                                At Denaro Link
+                                                                we will do
+                                                                everything we
+                                                                can to get you
+                                                                your maximum Age
+                                                                Pension and
+                                                                concession card
+                                                                Entitlements.
+                                                                And we make the
+                                                                whole process as
+                                                                easy as possible
+                                                                for
+                                                                you.
+                                                            </h5>
+
+                                                            <h5 class="mt-3 mb-3
+                                                                text-center"
+                                                                style="font-size:
+                                                                16px">
+                                                                If you have any
+                                                                questions you
+                                                                can email us at
+                                                                denarolink@denarowealth.com.au
+                                                                or phone us on
+                                                                0435535513 and
+                                                                one of our
+                                                                Centrelink
+                                                                Experts will be
+                                                                able to assist
+                                                                you further.
+                                                            </h5>
+
+                                                            <h5 class="blue
+                                                                text-center">
+
+                                                                <a
+                                                                    href="https://www.denarolink.com.au"
+                                                                    style="color:
+                                                                    #36B446">
+                                                                    www.denarolink.com.au</a>
+                                                            </h5>
+
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12 mt-2"
+                                                    id="buttons">
+                                                    <button class="btn btn-dark
+                                                        ml-2 col-sm-12 col-md-4"
+                                                        onclick="step(8)">
+                                                        <i class="fas
+                                                            fa-angle-double-left"></i>
+                                                        Previous
+                                                    </button>
+
+                                                    <button class="btn
+                                                        btn-success ml-2
+                                                        col-sm-12 col-md-3"
+                                                        onclick="location.reload()">
+                                                        <i class="fas
+                                                            fa-refresh"></i>
+                                                        Restart
+                                                    </button>
+                                                    <button class="btn btn-info
+                                                        ml-2 col-sm-12 col-md-4"
+                                                        data-target="#staticBackdrop"
+                                                        data-toggle="modal"
+                                                        type="button">
+                                                        <i class="fas fa-print"></i>
+                                                        Download PDF
+                                                    </button>
+                                                </div>
+
+                                                <!--                    first-->
+                                                <div class="col-md-12 mt-3
+                                                    text-left" id="PDF-content"
+                                                    style="display: none;">
+                                                    <div class="greenbar mb-1"
+                                                        style="border: 1px solid
+                                                        #36b446;"></div>
+                                                    <div
+                                                        class="html2pdf__page-break"></div>
+                                                    <h5 class="blue text-left">Things
+                                                        you should know</h5>
+                                                    <ul style="font-family:
+                                                        'Fira Sans Condensed',
+                                                        sans-serif">
+                                                        <li>To qualify you must
+                                                            meet the income test
+                                                            above and be in
+                                                            Australia</li>
+                                                        <li>The current income
+                                                            test thresholds are
+                                                            determined by
+                                                            legislation which
+                                                            could change in
+                                                            the
+                                                            future
+                                                        </li>
+                                                        <li>You will be required
+                                                            to notify Centrelink
+                                                            of any changes in
+                                                            your circumstances
+                                                            both
+                                                            personal
+                                                            and financial within
+                                                            14 days of the
+                                                            change occurring.
+                                                            This is an ongoing
+                                                            obligation.
+                                                        </li>
+                                                        <li>If eligible, you
+                                                            need to submit an
+                                                            application to
+                                                            Centrelink and will
+                                                            need to then keep
+                                                            Centrelink updated
+                                                            with all changes to
+                                                            your financial
+                                                            circumstances and
+                                                            living
+                                                            arrangements
+                                                        </li>
+                                                        <li>Example of the
+                                                            income types
+                                                            Centrelink Assess
+                                                            are as follows:
+                                                            <ul
+                                                                class="text-justify">
+                                                                <li>employment
+                                                                    income, such
+                                                                    as wages,
+                                                                    salary and
+                                                                    self
+                                                                    employment
+                                                                    income</li>
+                                                                <li>employer
+                                                                    provided
+                                                                    fringe
+                                                                    benefits</li>
+                                                                <li>rental
+                                                                    income</li>
+                                                                <li>reportable
+                                                                    super
+                                                                    contributions,
+                                                                    salary
+                                                                    sacrifice</li>
+                                                                <li>Centrelink
+                                                                    pensions,
+                                                                    benefits and
+                                                                    some
+                                                                    supplementary
+                                                                    payments</li>
+                                                                <li>Paid
+                                                                    Parental
+                                                                    Leave
+                                                                    payments</li>
+                                                                <li>Department
+                                                                    of Veterans
+                                                                    Affairs
+                                                                    payments.</li>
+                                                                <li>deemed
+                                                                    income from
+                                                                    financial
+                                                                    investments,
+                                                                    such as bank
+                                                                    accounts,
+                                                                    managed
+                                                                    investments
+                                                                    and shares
+                                                                </li>
+                                                                <li>deemed
+                                                                    income from
+                                                                    account-based
+                                                                    income
+                                                                    streams</li>
+                                                                <li>income from
+                                                                    income
+                                                                    stream
+                                                                    products,
+                                                                    such as
+                                                                    super
+                                                                    pensions and
+                                                                    defined
+                                                                    benefit
+                                                                    income
+                                                                    streams
+                                                                </li>
+                                                                <li>foreign
+                                                                    income</li>
+                                                                <li>privates
+                                                                    trusts and
+                                                                    companie</li>
+                                                                <li>compensation
+                                                                    payments,
+                                                                    including
+                                                                    periodical
+                                                                    and lump sum
+                                                                    lump sum
+                                                                    payments,
+                                                                    such as
+                                                                    redundancy,
+                                                                    leave, or
+                                                                    termination
+                                                                    payments.
+                                                                </li>
+
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <p class="text-justify
+                                                        d-hidden">
+                                                        Deeming is the term
+                                                        which describes the
+                                                        method used by
+                                                        Centrelink and Veteran’s
+                                                        Affairs to
+                                                        calculate your
+                                                        assessable income from
+                                                        certain investments when
+                                                        determining the level of
+                                                        entitlement to be paid.
+                                                        Deeming means that you
+                                                        are assumed to earn a
+                                                        certain return on
+                                                        ‘financial’ investments,
+                                                        irrespective of the
+                                                        actual rate of interest
+                                                        or capital growth you
+                                                        earn. If you earn more
+                                                        than the deemed rate on
+                                                        your investments, the
+                                                        excess will not be
+                                                        included in the income
+                                                        test
+                                                        and will not affect your
+                                                        Centrelink payment.
+                                                        However, if the
+                                                        investment earns less
+                                                        than the
+                                                        deemed rate, you will
+                                                        still be assessed as
+                                                        earning income at the
+                                                        deemed rate.
+                                                        deemed rate, you will
+                                                        still be assessed as
+                                                        earning income at the
+                                                        deemed rate.
+
+                                                    </p>
+
+                                                    <div class="greenbar mb-1"
+                                                        style="border: 1px solid
+                                                        #36b446;"></div>
+
+                                                    <div
+                                                        class="html2pdf__page-break"></div>
+                                                    <h5 class="blue text-left">What
+                                                        is deeming?</h5>
+
+                                                    <p class="text-justify">
+                                                        Deeming is the term
+                                                        which describes the
+                                                        method used by
+                                                        Centrelink and Veteran’s
+                                                        Affairs to
+                                                        calculate your
+                                                        assessable income from
+                                                        certain investments when
+                                                        determining the level of
+                                                        entitlement to be paid.
+                                                        Deeming means that you
+                                                        are assumed to earn a
+                                                        certain return on
+                                                        ‘financial’ investments,
+                                                        irrespective of the
+                                                        actual rate of interest
+                                                        or capital growth you
+                                                        earn. If you earn more
+                                                        than the deemed rate on
+                                                        your investments, the
+                                                        excess will not be
+                                                        included in the income
+                                                        test
+                                                        and will not affect your
+                                                        Centrelink payment.
+                                                        However, if the
+                                                        investment earns less
+                                                        than the
+                                                        deemed rate, you will
+                                                        still be assessed as
+                                                        earning income at the
+                                                        deemed rate. The income
+                                                        test then combines the
+                                                        deemed income with
+                                                        income earned from other
+                                                        sources you receive to
+                                                        work out your
+                                                        entitlements under the
+                                                        income test.
+                                                    </p>
+
+
+                                                    <h4 class="blue">How does
+                                                        deeming work?</h4>
+                                                    <p class="text-justify
+                                                        mt-2">
+                                                        To work out the level of
+                                                        deemed income that your
+                                                        financial investments
+                                                        earn you simply apply
+                                                        the following rates in
+                                                        regards to the amount of
+                                                        total financial assets
+                                                        you hold. For the
+                                                        current deeming rates
+                                                        refer to :
+                                                        <a
+                                                            href="https://www.humanservices.gov.au/individuals/enablers/deeming">https://www.humanservices.gov.au/individuals/enablers/deeming</a>
+                                                    </p>
+                                                    <p class="text-justify
+                                                        mt-2">
+                                                        The Government changes
+                                                        the deeming rate from
+                                                        time to time to reflect
+                                                        market conditions and
+                                                        most financial
+                                                        institutions offer
+                                                        special accounts that
+                                                        pay interest at the
+                                                        deeming rate.
+                                                    </p>
+                                                    <p class="text-justify
+                                                        d-hidden">
+                                                        Deeming is the term
+                                                        which describes the
+                                                        method used by
+                                                        Centrelink and Veteran’s
+                                                        Affairs to
+                                                        calculate your
+                                                        assessable income from
+                                                        certain investments when
+                                                        determining the level of
+                                                        entitlement to be paid.
+                                                        Deeming means that you
+                                                        are assumed to earn a
+                                                        certain return on
+                                                        ‘financial’ investments,
+                                                        irrespective of the
+                                                        actual rate of interest
+                                                        or capital growth you
+                                                        earn. If you earn more
+                                                        than the deemed rate on
+                                                        your investments, the
+                                                        excess will not be
+                                                        included in the income
+                                                        test
+                                                        and will not affect your
+                                                        Centrelink payment.
+                                                        However, if the
+                                                        investment earns less
+                                                        than the
+                                                        deemed rate, you will
+                                                        still be assessed as
+                                                        earning income at the
+                                                        deemed rate.
+                                                    </p>
+
+                                                    <p class="text-justify
+                                                        d-hidden">
+                                                        Deeming is the term
+                                                        which describes the
+                                                        method used by
+                                                        Centrelink and Veteran’s
+                                                        Affairs to
+                                                        calculate your
+                                                        assessable income from
+                                                        certain investments when
+                                                        determining the level of
+                                                        entitlement to be paid.
+                                                        Deeming means that you
+                                                        are assumed to earn a
+                                                        certain return on
+                                                        ‘financial’ investments,
+                                                        irrespective of the
+                                                        actual rate of interest
+                                                        or capital growth you
+                                                        earn. If you earn more
+                                                        than the deemed rate on
+                                                        your investments, the
+                                                        excess will not be
+                                                        included in the income
+                                                        test
+                                                        and will not affect your
+                                                        Centrelink payment.
+                                                        However, if the
+                                                        investment earns less
+                                                        than the
+                                                        deemed rate, you will
+                                                        still be assessed as
+                                                        earning income at the
+                                                        deemed rate. The income
+                                                        test then combines the
+                                                        deemed income with
+                                                        income earned from other
+                                                        sources you receive to
+                                                        work out your
+                                                        entitlements under the
+                                                        income test.
+                                                    </p>
+                                                    <div class="greenbar mb-1"
+                                                        style="border: 1px solid
+                                                        #36b446;"></div>
+
+                                                    <div
+                                                        class="html2pdf__page-break"></div>
+                                                    <div class="col-md-12">
+                                                        <h4 class="blue">Your
+                                                            Information</h4>
+                                                        <p class="">Below is a
+                                                            summary of the
+                                                            information that you
+                                                            have entered in the
+                                                            Low Income
+                                                            Calculator to arrive
+                                                            at your estimated
+                                                            entitlements.</p>
+                                                        <div
+                                                            class="table-responsive
+                                                            mt-3">
+                                                            <table class="table
+                                                                table-bordered"
+                                                                id="LResulttable1"
+                                                                style="font-size:
+                                                                14px;font-family:
+                                                                'Fira Sans
+                                                                Condensed',
+                                                                sans-serif;">
+                                                                <thead
+                                                                    class="text-white
+                                                                    bg-green">
+                                                                    <tr>
+                                                                        <th
+                                                                            width="50%">Personal
+                                                                            Info</th>
+                                                                        <th>Client</th>
+                                                                        <th>Partner</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Date
+                                                                            of
+                                                                            Birth</td>
+                                                                        <td
+                                                                            id="DOB">1/1/1952</td>
+                                                                        <td
+                                                                            id="DOB2"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
+                                                        <br>
+                                                        <div
+                                                            class="table-responsive">
+                                                            <table class="table
+                                                                table-bordered"
+                                                                id="LResulttable2"
+                                                                style="font-size:
+                                                                14px;font-family:
+                                                                'Fira Sans
+                                                                Condensed',
+                                                                sans-serif;">
+                                                                <thead
+                                                                    class="text-white
+                                                                    bg-green">
+                                                                    <tr>
+                                                                        <th
+                                                                            width="50%">Financial
+                                                                            Assets</th>
+                                                                        <th>Client</th>
+                                                                        <th>Partner</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+
+                                                                    <tr>
+                                                                        <td>Saving
+                                                                            Accounts/Term
+                                                                            Deposits</td>
+                                                                        <td
+                                                                            id="savings">$0</td>
+                                                                        <td
+                                                                            id="savings2">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Super
+                                                                            Balance</td>
+                                                                        <td
+                                                                            id="superBalance">$0</td>
+                                                                        <td
+                                                                            id="superBalance2">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            Account
+                                                                            Based
+                                                                            Pensions</td>
+                                                                        <td
+                                                                            id="ABP">$0</td>
+                                                                        <td
+                                                                            id="ABP2">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Direct
+                                                                            Shares</td>
+                                                                        <td
+                                                                            id="directShare">$0</td>
+                                                                        <td
+                                                                            id="directShare2">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Managed
+                                                                            Funds</td>
+                                                                        <td
+                                                                            id="managedFunds">$0</td>
+                                                                        <td
+                                                                            id="managedFunds2">$0</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <br>
+                                                        <div
+                                                            class="table-responsive">
+                                                            <table class="table
+                                                                table-bordered"
+                                                                id="LResulttable3"
+                                                                style="font-size:
+                                                                14px;font-family:
+                                                                'Fira Sans
+                                                                Condensed',
+                                                                sans-serif;">
+                                                                <thead
+                                                                    class="text-white
+                                                                    bg-green">
+                                                                    <tr>
+                                                                        <th
+                                                                            width="50%">
+                                                                            Rental
+                                                                            Income</th>
+                                                                        <th></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+
+                                                                    <tr>
+                                                                        <td>Rent
+                                                                            Received</td>
+                                                                        <!-- <td colspan="2" id="rent">$0</td> -->
+                                                                        <td
+                                                                            id="rent">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Frequency</td>
+                                                                        <!-- <td colspan="2" id="frequency">$0</td> -->
+                                                                        <td
+                                                                            id="frequency">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Annual
+                                                                            Expenses</td>
+                                                                        <!-- <td colspan="2" id="annualExpense">$0</td> -->
+                                                                        <td
+                                                                            id="annualExpense">$0</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <br>
+
+                                                        <p class="text-justify
+                                                            d-hidden">
+                                                            Deeming is the term
+                                                            which describes the
+                                                            method used by
+                                                            Centrelink and
+                                                            Veteran’s Affairs to
+                                                            calculate your
+                                                            assessable income
+                                                            from certain
+                                                            investments when
+                                                            determining the
+                                                            level of
+                                                            entitlement to be
+                                                            paid.
+                                                            Deeming means that
+                                                            you are assumed to
+                                                            earn a certain
+                                                            return on
+                                                            ‘financial’
+                                                            investments,
+                                                            irrespective of the
+                                                            actual rate of
+                                                            interest .
+                                                        </p>
+                                                        <div
+                                                            class="html2pdf__page-break">
+                                                            <div class="greenbar
+                                                                mb-1"
+                                                                style="border:
+                                                                1px solid
+                                                                #36b446;"></div>
+                                                        </div>
+
+                                                        <div
+                                                            class="table-responsive">
+                                                            <table class="table
+                                                                table-bordered"
+                                                                id="LResulttable4"
+                                                                style="font-size:
+                                                                14px;font-family:
+                                                                'Fira Sans
+                                                                Condensed',
+                                                                sans-serif;">
+                                                                <thead
+                                                                    class="text-white
+                                                                    bg-green">
+                                                                    <tr>
+                                                                        <th
+                                                                            width="50%">Other
+                                                                            Income
+                                                                            Received</th>
+                                                                        <th>Client</th>
+                                                                        <th>Partner</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+
+                                                                    <tr>
+                                                                        <td>Gross
+                                                                            Salary
+                                                                            /Net
+                                                                            Business
+                                                                            Income</td>
+                                                                        <td
+                                                                            id="grossSalary1">$0</td>
+                                                                        <td
+                                                                            id="grossSalary2">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Other
+                                                                            Income</td>
+                                                                        <td
+                                                                            id="OI">$0</td>
+                                                                        <td
+                                                                            id="OI2">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Centrelink
+                                                                            Pensions/Benefits</td>
+                                                                        <td
+                                                                            id="CPB">$0</td>
+                                                                        <td
+                                                                            id="CPB2">$0</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <br>
+                                                        <div
+                                                            class="table-responsive">
+                                                            <table class="table
+                                                                table-bordered"
+                                                                id="LResulttable5"
+                                                                style="font-size:
+                                                                14px;font-family:
+                                                                'Fira Sans
+                                                                Condensed',
+                                                                sans-serif;">
+                                                                <thead
+                                                                    class="text-white
+                                                                    bg-green">
+                                                                    <tr>
+                                                                        <th
+                                                                            width="50%">Lifetime
+                                                                            Income
+                                                                            Stream</th>
+                                                                        <th>Client</th>
+                                                                        <th>Partner</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+
+                                                                    <tr>
+                                                                        <td>Annual
+                                                                            Pension
+                                                                            Payment</td>
+                                                                        <td
+                                                                            id="app">$0</td>
+                                                                        <td
+                                                                            id="app2">$0</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Annual
+                                                                            Deductible
+                                                                            Amount</td>
+                                                                        <td
+                                                                            id="ada">$0</td>
+                                                                        <td
+                                                                            id="ada2">$0</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
+                                                        <p class="text-justify
+                                                            d-hidden">
+                                                            Deeming is the term
+                                                            which describes the
+                                                            method used by
+                                                            Centrelink and
+                                                            Veteran’s Affairs to
+                                                            calculate your
+                                                            assessable income
+                                                            from certain
+                                                            investments when
+                                                            determining the
+                                                            level of
+                                                            entitlement to be
+                                                            paid.
+                                                        </p>
+                                                        <p class="text-justify
+                                                            d-hidden">
+                                                            Deeming is the term
+                                                            which describes the
+                                                            method used by
+                                                            Centrelink and
+                                                            Veteran’s Affairs to
+                                                            calculate your
+                                                            assessable income
+                                                            from certain
+                                                            investments when
+                                                            determining the
+                                                            level of
+                                                            entitlement to be
+                                                            paid.
+                                                        </p>
+                                                        <p class="text-justify
+                                                            d-hidden">
+                                                            Deeming is the term
+                                                            which describes the
+                                                            method used by
+                                                            Centrelink and
+                                                            Veteran’s Affairs to
+                                                            calculate your
+                                                            assessable income
+                                                            from certain
+                                                            investments when
+                                                            determining the
+                                                            level of
+                                                            entitlement to be
+                                                            paid.
+                                                        </p>
+                                                        <p class="text-justify
+                                                            d-hidden">
+                                                            Deeming is the term
+                                                            which describes the
+                                                            method used by
+                                                            Centrelink and
+                                                            Veteran’s Affairs to
+                                                            calculate your
+                                                            assessable income
+                                                            from certain
+                                                            investments when
+                                                            determining the
+                                                            level of
+                                                            entitlement to be
+                                                            paid.
+                                                        </p>
+                                                        <p class="text-justify
+                                                            d-hidden">
+                                                            Deeming is the term
+                                                            which describes the
+                                                            method used by
+                                                            Centrelink and
+                                                            Veteran’s Affairs to
+                                                            calculate your
+                                                            assessable income
+                                                            from certain
+                                                            investments when
+                                                            determining the
+                                                            level of
+                                                            entitlement to be
+                                                            paid.
+                                                        </p>
+                                                        <p class="text-justify
+                                                            d-hidden">
+                                                            Deeming is the term
+                                                            which describes the
+                                                            method used by
+                                                            Centrelink and
+                                                            Veteran’s Affairs to
+                                                            calculate your
+                                                            assessable income
+                                                            from certain
+                                                            investments when
+                                                            determining the
+                                                            level of
+                                                            entitlement to be
+                                                            paid.
+                                                        </p>
+                                                        <div class="greenbar
+                                                            mb-1" style="border:
+                                                            1px solid #36b446;"></div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div aria-hidden="true"
+                                        aria-labelledby="staticBackdropLabel"
+                                        class="modal fade"
+                                        data-backdrop="static"
+                                        data-keyboard="false"
+                                        id="staticBackdrop" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title"
+                                                        id="staticBackdropLabel">Please
+                                                        Enter Your Details</h5>
+                                                    <button aria-label="Close"
+                                                        class="close"
+                                                        data-dismiss="modal"
+                                                        onclick="cancelModal()"
+                                                        type="button">
+                                                        <span
+                                                            aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <label for="name">
+                                                                Name
+                                                            </label>
+                                                            <input
+                                                                class="form-control"
+                                                                id="name"
+                                                                name="name"
+                                                                required
+                                                                type="text">
+                                                            <label for="name">
+                                                                Last Name
+                                                            </label>
+                                                            <input
+                                                                class="form-control"
+                                                                id="lastName"
+                                                                name="lastName"
+                                                                required
+                                                                type="text" />
+                                                            <label for="email">
+                                                                Email Address
+                                                            </label>
+                                                            <input
+                                                                class="form-control"
+                                                                id="email"
+                                                                name="email"
+                                                                required
+                                                                type="email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn
+                                                        btn-secondary"
+                                                        data-dismiss="modal"
+                                                        onclick="cancelModal()"
+                                                        type="button">
+                                                        Close
+                                                    </button>
+                                                    <button class="btn
+                                                        btn-success"
+                                                        id="emailSubmit"
+                                                        onclick="getPDF()"
+                                                        type="button">Send
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                            <link crossorigin="anonymous"
+                                href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+                                integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+                                rel="stylesheet" />
+                            <script crossorigin="anonymous"
+                                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                                src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+                            <script crossorigin="anonymous"
+                                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                            <script crossorigin="anonymous"
+                                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                                src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                            <!-- <script
+                                    crossorigin="anonymous"
+                                    integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
+                                    referrerpolicy="no-referrer"
+                                    src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
+                            ></script> -->
+                            <script
+                                src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+                            <script
+                                src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+                            <script src="./PDF.js"></script>
+                            <script src="./logic.js"></script>
+                        </body>
+                    </html>

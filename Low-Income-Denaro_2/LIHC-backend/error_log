@@ -1,0 +1,25 @@
+[26-Jan-2023 11:38:27 UTC] PHP Warning:  mysqli_connect(): (42000/1044): Access denied for user 'nat'@'bom1plzcpnl498939.prod.bom1.secureserver.net' to database 'lowincome-healthcare' in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/connection.php on line 8
+[26-Jan-2023 11:42:57 UTC] PHP Warning:  mysqli_connect(): (42000/1044): Access denied for user 'nat'@'bom1plzcpnl498939.prod.bom1.secureserver.net' to database 'lowincome-healthcare' in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/connection.php on line 8
+[26-Jan-2023 12:23:50 UTC] PHP Warning:  mysqli_connect(): (42000/1044): Access denied for user 'nat'@'bom1plzcpnl498939.prod.bom1.secureserver.net' to database 'lowincome-healthcare' in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/connection.php on line 8
+[26-Jan-2023 12:36:49 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[26-Jan-2023 12:36:49 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[26-Jan-2023 12:41:37 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[26-Jan-2023 12:41:37 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[26-Jan-2023 12:44:09 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[26-Jan-2023 12:44:09 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[26-Jan-2023 12:44:38 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[26-Jan-2023 12:44:38 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[26-Jan-2023 12:46:25 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[26-Jan-2023 12:46:25 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[27-Jan-2023 00:25:15 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[27-Jan-2023 00:25:15 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[27-Jan-2023 00:33:35 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[27-Jan-2023 00:33:35 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[27-Jan-2023 00:36:55 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[27-Jan-2023 00:36:55 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[27-Jan-2023 12:38:51 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[27-Jan-2023 12:38:51 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[27-Jan-2023 13:01:49 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[27-Jan-2023 13:01:49 UTC] PHP Notice:  Undefined variable: i in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/LIHC-backend/income_test.php on line 34
+[15-Mar-2023 14:10:16 UTC] PHP Warning:  Undefined variable $i in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/LIHC-backend/deemed_income.php on line 41
+[15-Mar-2023 14:10:16 UTC] PHP Warning:  Undefined variable $i in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/LIHC-backend/income_test.php on line 34

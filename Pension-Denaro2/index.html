@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Age Pension Calculator</title>
+
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="./styling.css" rel="stylesheet" />
+    <link href="./progressbar.css" rel="stylesheet" />
+    <link href="./loader.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container-fluid my-2 text-center">
+
+
+
+<div class="row " id="frontPage">
+    <div class="col-md-12 my-5">
+        
+        <img src='./logo-1.png' alt='logo' width="210px" height="210px" >
+    </div>
+    <div class="col-md-12 my-5">
+        <h1 class="bold text-success">AGE PENSION CALCULATOR </h1>
+    </div>
+    <div class="col-md-12">
+        <p>Our Age Pension Calculator can help you determine whether you meet the eligibility criteria for the Age Pension.</p>
+        <button class="btn btn-success w-25" onclick="mainCalculate()"><i class="fa-solid fa-angles-right"></i> Start </button>
+    </div>
+
+</div>
+
+
+
+    <div class="d-none" id="mainCalculator">
+    <div class="row">
+        <div class="col-md-12 d-none">
+            <div class="row">
+                <div class="col-md-2"> <img src='./logo-1.png' alt='logo' width="210px" height="210px" class="float-left" ></div>
+                <div class="col-md-8"><h1 class="bold mt-5 pt-5">AGE PENSION CALCULATOR </h1></div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8 mt-2">
+            <div class="row" id="loaderDiv" style="display: none;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="lds-ellipsis">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+
+                    <h6 class="text-center">We are compiling the PDF for you please wait meanwhile explore results below</h6>
+                </div>
+            </div>
+            <!--            left side main card-->
+            <div class="card px-5 mt-2 pt-0 hello">
+                <div class="row justify-content-center" id="progressbarDiv">
+                    <div class="col-11 col-sm-9 col-md-12 col-lg-12 col-xl-12 text-center p-0 ">
+                        <div class="card px-0 mt-2 pb-0 pt-0" style="z-index: 0; border: none; position: relative;">
+                            <form id="msform">
+                                <!-- progressbar -->
+                                <ul id="progressbar">
+                                    <li class="active1" id="personal"><strong>Personal Info</strong></li>
+                                    <li id="home"><strong>Home</strong></li>
+                                    <li id="gift"><strong>Gifts</strong></li>
+                                    <li id="lifestyle"><strong>Lifestyle Assets</strong></li>
+                                    <li id="investment"><strong>Financial Assets</strong></li>
+                                    <li id="properties"><strong>Other Properties</strong></li>
+                                </ul>
+                                <ul id="progressbar2">
+                                    <li id="pension"><strong>Acc Based Pension</strong></li>
+                                    <li id="lifetimeIncome"><strong> Lifetime Income Stream</strong></li>
+                                    <li id="workingIncome"><strong>Income from Working</strong></li>
+                                    <li id="otherIncome"><strong>Other Income</strong></li>
+                                    <li id="companiesIncome"><strong>Companies or Trusts </strong></li>
+                                    <li id="result"><strong>Results </strong></li>
+                                </ul>
+
+                                <br />
+                            </form>
+                            <div class="progress">
+                                <div aria-valuemax="100" aria-valuemin="0" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3" id="step-0">
+                    <!--                    start-->
+                    <div class="col-md-12">
+                        <h4 class="bold mb-5 green">Personal Info</h4>
+
+                        <label for="relationshipStatus1">What is your relationship status?</label>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 mt-2">
+                                <input checked class="form-check-input" id="relationshipStatus1" name="relationshipStatus" onchange="relationship(this.value)" type="radio" value="1" />
+                                <label class="form-check-label" for="relationshipStatus1">
+                                    <img alt="img" class="img-responsive" src="./single-2.svg" width="40%" />
+                                    Single
+                                </label>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 mt-2">
+                                <input class="form-check-input" id="relationshipStatus2" name="relationshipStatus" onchange="relationship(this.value)" type="radio" value="2" />
+
+                                <label class="form-check-label" for="relationshipStatus2">
+                                    <img alt="img" class="img-responsive" src="./couple-2.svg" width="40%" />
+                                    Couple
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./calendar.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="husbandDOB">What is your DOB?</label>
+                                    <input class="form-control" id="husbandDOB" name="husbandDOB" placeholder="mm-dd-yyyy" type="date" />
+                                    <br />
+                                    <div class="wife">
+                                        <label for="wifeDOB">What is your partner's DOB?</label>
+                                        <input class="form-control" id="wifeDOB" name="wifeDOB" placeholder="mm-dd-yyyy" type="date" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-success float-right col-md-4" onclick="step(1)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Continue
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-3" id="step-1">
+                    <div class="col-md-12 mt-3">
+                        <img alt="home" class="img-fluid" src="./home.svg" width="10%" />
+                        <br />
+                        <label>Do you own a home?</label>
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="home2" name="home" onchange="homeOptions(this.value)" type="radio" value="0" />
+                            <label for="home2">No</label>
+                            <input id="home1" name="home" onchange="homeOptions(this.value)" type="radio" value="1" />
+                            <label for="home1">Yes</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label class="home2Acres">Do you have a home loan?</label>
+                        <div class="home2Acres" style="text-align: center; margin-top: 5%;">
+                            <input checked id="loanNo" name="homeloan" onchange="homeloan(this.value)" type="radio" value="0" />
+                            <label for="loanNo">No</label>
+                            <input id="loanYes" name="homeloan" onchange="homeloan(this.value)" type="radio" value="1" />
+                            <label for="loanYes">Yes</label>
+
+                            <br />
+                        </div>
+
+                        <br />
+
+                        <label class="mt-2 homeLoanOptions"></label>
+                        <div class="col-md-12 homeLoanOptions mt-3">
+                            <div class="card h-100 p-4">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img alt="img" class="img-responsive w-100" src="./loan.svg" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="homeLoan">Loan Balance</label>
+                                        <input class="form-control" id="homeLoan" name="homeLoan" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <label class="home2Acres">Is your home on more than 2 hectares (5 acres)?</label>
+                        <div class="home2Acres" style="text-align: center; margin-top: 5%;">
+                            <input checked id="home4" name="home2hector" onchange="homeOptions2(this.value)" type="radio" value="0" />
+                            <label for="home4">No</label>
+                            <input id="home3" name="home2hector" onchange="homeOptions2(this.value)" type="radio" value="1" />
+                            <label for="home3">Yes</label>
+
+                            <br />
+                        </div>
+
+                        <br />
+                        <p class="text-center home2Acres2">
+                            As you currently live on more than 2 hectares of land your property must satisfy the "extended land use test". To qualify for the extended land use test, several eligibility criteria must be met and this
+                            is then assessed by Centrelink. Given the complex nature of this our age pension calculator isn’t able to determine your eligibility. Refer to the following information from Services Australia
+                            (Centrelink) website.
+                            <a
+                                    href="https://www.google.com/url?sa=D&q=https://www.servicesaustralia.gov.au/rural-customers-and-primary-producers%3Fcontext%3D22526&ust=1654492500000000&usg=AOvVaw3IzQzmrZdWpXKjmDaJx5gS&hl=en&source=gmail"
+                            >
+                                Rural customers and primary producers - Age Pension - Services Australia
+                            </a>
+                        </p>
+                        <br />
+                        <p class="home2Acres2">
+                            Please contact us at <a href="mailto:denarolink@denarowealth.com.au">denarolink@denarowealth.com.au</a> for further information and speak to one of our Centrelink specialists who will be able to assist
+                            you further.
+                        </p>
+
+                        <br />
+                        <img alt="home" class="img-fluid d-none" src="./landscape.svg" width="10%" />
+                        <br />
+                        <label class="d-none" for="home2Acres">
+                            Value of the additional land
+                            <i
+                                    class="fas fa-question-circle"
+                                    data-toggle="tooltip"
+                                    title="“Enter in the value of the
+estimated Value of the land which is more than 2 Hectares"
+                            ></i>
+                        </label>
+                        <input class="form-control d-none" id="home2Acres" name="home2Acres" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" value="0" />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(0)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+                        <button class="btn btn-success float-right col-md-4" id="homeBTN" onclick="step(2)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-3" id="step-2">
+                    <div class="col-md-12">
+                        <h3 class="mt-2 green">Gifts</h3>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <img alt="home" class="img-fluid" src="./gift.svg" width="10%" />
+                        <br />
+                        <label>In the last 5 years, have you (and/or your partner) given away, sold for less than their market value or surrendered a right to any cash, assets, property or income?</label>
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="giftNo" name="gift" onchange="giftOptions(this.value)" type="radio" value="0" />
+                            <label for="giftNo">No</label>
+                            <input id="giftYes" name="gift" onchange="giftOptions(this.value)" type="radio" value="1" />
+                            <label for="giftYes">Yes</label>
+
+                            <br />
+                        </div>
+
+                        <br />
+
+                        <p class="text-center giftOptionsExtended">
+                            Gifting happens when you either give away assets or sell them at less than their market value. The most you can gift without affecting your payments is $10,000 in 1 financial year, but this cannot exceed
+                            $30,000 over 5 financial years.
+                        </p>
+
+                        <label class="giftOptionsExtended">In the Last 5 years have you or (and/or your partner) gifted any assets over these amounts?</label>
+                        <div class="giftOptionsExtended" style="text-align: center; margin-top: 5%;">
+                            <input checked id="giftExtendedNo" name="giftExtended" onchange="giftOptionsExtended(this.value)" type="radio" value="0" />
+                            <label for="giftExtendedNo">No</label>
+                            <input id="giftExtendedYes" name="giftExtended" onchange="giftOptionsExtended(this.value)" type="radio" value="1" />
+                            <label for="giftExtendedYes">Yes</label>
+
+                            <br />
+                        </div>
+
+                        <br />
+
+                        <p class="text-center giftOptionsExtendedEnds">
+                            As the amounts you have gifted over the last 5 years are over the allowable limits this will affect your entitlements and our age pension calculator isn’t able to determine your exact eligibility. Any Age
+                            pension estimates may decrease or even make you ineligible once the amounts gifted are assessed by Centrelink. If you select no to this question the estimated results will not be accurate at all.
+                        </p>
+                        <br />
+
+                        <p class="giftOptionsExtendedEnds">
+                            Please contact us at <a href="mailto:denarolink@denarowealth.com.au">denarolink@denarowealth.com.au</a>
+                            for further information and speak to one of our Centrelink specialists who will be able to assist you further and provide you with a more accurate estimate of your entitlements.
+                        </p>
+
+                        <br />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(1)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+                        <button class="btn btn-success float-right col-md-4" id="giftBTN" onclick="step(3)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="step-3">
+                    <div class="col-md-12">
+                        <h3 class="mt-2 green">Lifestyle Assets</h3>
+                    </div>
+                    <!--                    <label class="mt-2 ">Cars</label>-->
+                    <div class="col-md-12 mt-2">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./car.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Cars</h4>
+                                    <label for="husbandCars">You</label>
+                                    <input class="form-control" id="husbandCars" name="husbandCars" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <div class="wife">
+                                        <label for="wifeCars">Partner</label>
+                                        <input class="form-control" id="wifeCars" name="wifeCars" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./warehouse-.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">
+                                        Household Contents
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="This is the value you would receive from a fire sale. Centrelink normally accepts a value of up to
+$10,000 as an accepetable limit."
+                                        ></i>
+                                    </h4>
+                                    <label for="husbandHousehold">You/Combined</label>
+                                    <input class="form-control" id="husbandHousehold" name="husbandHousehold" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./boat.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Boat</h4>
+                                    <label for="husbandBoat">You/Combined</label>
+                                    <input class="form-control" id="husbandBoat" name="husbandBoat" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./trailer-caravan.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Caravan</h4>
+                                    <label for="husbandCaravan">You/Combined</label>
+                                    <input class="form-control" id="husbandCaravan" name="husbandCaravan" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <!--                                    <br>-->
+                                    <!--                                    <div class="wife">-->
+                                    <!--                                        <label for="wifeCaravan">Partner</label>-->
+                                    <!--                                        <input class="form-control" id="wifeCaravan" name="wifeCaravan" placeholder="Please Enter Value in $"-->
+                                    <!--                                               type="text" onkeyup="format(this)">-->
+                                    <!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./money.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">
+                                        Other Assets
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="Please enter in any other assets you may hold in this section. If you run a business as a sole trader
+or via a partnership please add in any business assets (ie stock or any inventory)."
+                                        ></i>
+                                    </h4>
+                                    <label for="husbandOtherAssets">You/Combined</label>
+                                    <input class="form-control" id="husbandOtherAssets" name="husbandOtherAssets" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(2)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+
+                        <button class="btn btn-success float-right col-md-4" onclick="step(4)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-3" id="step-4">
+                    <div class="col-md-12">
+                        <h3 class="mt-2 green">Financial Assets</h3>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./bank.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center mb-1">Saving Accounts/Term Deposits</h4>
+                                    <label for="husbandSavingsAccounts">You</label>
+                                    <input class="form-control" id="husbandSavingsAccounts" name="husbandSavingsAccounts" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <div class="wife">
+                                        <label for="wifeSavingsAccounts">Partner</label>
+                                        <input class="form-control" id="wifeSavingsAccounts" name="wifeSavingsAccounts" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./piggy-bank.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">
+                                        Superannaution
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="Please add in the combined value of all the money you have in your super accounts including any
+funds you have in a Self Managed Super Fund (SMSF). Do not include any money that you have in
+an account based pension."
+                                        ></i>
+                                    </h4>
+                                    <label for="husbandSuperAnnaution">You</label>
+                                    <input class="form-control" id="husbandSuperAnnaution" name="husbandSuperAnnaution" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <div class="wife">
+                                        <label for="wifeSuperAnnaution">Partner</label>
+                                        <input class="form-control" id="wifeSuperAnnaution" name="wifeSuperAnnaution" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./piggy-bank-new.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">
+                                        Account Based Pensions
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="Please add in the combined value of all the money you have in your account based pensions
+including any funds you have in a pension account within a Self Managed Super Fund (SMSF)
+where you receive a regular payment from."
+                                        ></i>
+                                    </h4>
+                                    <label for="husbandPension">You</label>
+                                    <input class="form-control" id="husbandPension" name="husbandPension" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <div class="wife">
+                                        <label for="wifePension">Partner</label>
+                                        <input class="form-control" id="wifePension" name="wifePension" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./portfolio.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Share Portfolio</h4>
+                                    <label for="husbandPortfolio">You</label>
+                                    <input class="form-control" id="husbandPortfolio" name="husbandPortfolio" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <div class="wife">
+                                        <label for="wifePortfolio">Partner</label>
+                                        <input class="form-control" id="wifePortfolio" name="wifePortfolio" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./funds.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Managed Funds</h4>
+                                    <label for="husbandFunds">You</label>
+                                    <input class="form-control" id="husbandFunds" name="husbandFunds" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <div class="wife">
+                                        <label for="wifeFunds">Partner</label>
+                                        <input class="form-control" id="wifeFunds" name="wifeFunds" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label for="loanOnFunds1">Do you have any loans attached to your Shares or Managed Funds?</label>
+
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="loanOnFunds2" name="loanOnFunds" onchange="loanOnFunds(this.value)" type="radio" value="0" />
+                            <label for="loanOnFunds2">No</label>
+                            <input id="loanOnFunds1" name="loanOnFunds" onchange="loanOnFunds(this.value)" type="radio" value="1" />
+                            <label for="loanOnFunds1">Yes</label>
+
+                            <br />
+                        </div>
+
+                        <div class="row mt-3" id="loanOnFundsDiv">
+                            <div class="col-md-12">
+                                <div class="card h-100 p-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img alt="img" class="img-responsive w-100" src="./loan.svg" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4 class="text-center">Investment Loans (LOC)</h4>
+                                            <label for="husbandInvestmentLoan">You</label>
+                                            <input class="form-control" id="husbandInvestmentLoan" name="husbandInvestmentLoan" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                            <br />
+                                            <div class="wife">
+                                                <label for="wifeInvestmentLoan">Partner</label>
+                                                <input class="form-control" id="wifeInvestmentLoan" name="wifeInvestmentLoan" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(3)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+
+                        <button class="btn btn-success float-right col-md-4" onclick="step(5)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="step-5">
+                    <div class="col-md-12">
+                        <h3 class="mt-2 green">Other Properties (excluding your home)</h3>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="ownOtherProperty1">
+                            Do you own any other Property other than your home?
+                            <i class="fas fa-question-circle" data-toggle="tooltip" title="This includes any holiday homes, hobby farms or any other land you own."></i>
+                        </label>
+
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="ownOtherProperty2" name="ownOtherProperty" onchange="otherPropertyOptions(this.value)" type="radio" value="0" />
+                            <label for="ownOtherProperty2">No</label>
+                            <input id="ownOtherProperty1" name="ownOtherProperty" onchange="otherPropertyOptions(this.value)" type="radio" value="1" />
+                            <label for="ownOtherProperty1">Yes</label>
+
+                            <br />
+                        </div>
+                    </div>
+
+                    <label class="mt-2 secondHome"></label>
+                    <div class="col-md-12 secondHome mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./property-value.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Property Details</h4>
+                                    <label for="secondPropertyValue">Market Value</label>
+                                    <input class="form-control" id="secondPropertyValue" name="secondPropertyValue" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-3 secondHome">
+                        <label class="mt-2" for="ownOtherProperty1">Does this Property have a loan attached?</label>
+
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="propertyLoan2" name="propertyLoan" onchange="propertyLoan(this.value)" type="radio" value="0" />
+                            <label for="propertyLoan2">No</label>
+                            <input id="propertyLoan1" name="propertyLoan" onchange="propertyLoan(this.value)" type="radio" value="1" />
+                            <label for="propertyLoan1">Yes</label>
+
+                            <br />
+                        </div>
+                    </div>
+
+                    <label class="mt-2 propertyLoan"></label>
+                    <div class="col-md-12 propertyLoan mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./loan.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Property Loan</h4>
+                                    <label for="secondPropertyLoan">Loan Balance</label>
+                                    <input class="form-control" id="secondPropertyLoan" name="secondPropertyLoan" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3 secondHome">
+                        <label for="rentOptions1">Is this Property rented?</label>
+
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="rentOptions2" name="rentOptions" onchange="rentOptions(this.value)" type="radio" value="0" />
+                            <label for="rentOptions2">No</label>
+                            <input id="rentOptions1" name="rentOptions" onchange="rentOptions(this.value)" type="radio" value="1" />
+                            <label for="rentOptions1">Yes</label>
+
+                            <br />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 rentOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./rent.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Frequency of Rent</h4>
+                                    <label class="rentOptions" for="secondPropertyRentFrequency"></label>
+                                    <select class="form-control rentOptions" id="secondPropertyRentFrequency" name="secondPropertyRentFrequency">
+                                        <option selected value="monthly">Monthly</option>
+                                        <option value="weekly">Weekly</option>
+                                    </select>
+                                    <br />
+                                    <h4 class="text-center">Rent Received</h4>
+
+                                    <label for="secondPropertyRentalIncome"></label>
+                                    <input class="form-control" id="secondPropertyRentalIncome" name="secondPropertyRentalIncome" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <h4 class="text-center">
+                                        Annual Expenses
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="This includes, interest on the loan, council and water rates,
+insurances/body corporate fees, land tax, repairs and maintenance."
+                                        ></i>
+                                    </h4>
+                                    <label for="secondPropertyAnnualExpense"></label>
+                                    <input class="form-control" id="secondPropertyAnnualExpense" name="secondPropertyAnnualExpense" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(4)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+
+                        <button class="btn btn-success float-right col-md-4" onclick="step(6)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="step-6">
+                    <div class="col-md-12">
+                        <h3 class="mt-2 green">Other Account Based Pensions</h3>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="gFatherIncomeStream1">
+                            Do you have any grandfathered Account Based Pension that was set up before 1 January 2015?
+                            <i
+                                    class="fas fa-question-circle"
+                                    data-toggle="tooltip"
+                                    title="This is an Account Based Pension that was set up prior to 1 January 2015 and where the owner of
+the pension was also in receipt of Centrelink payments on that date. Further, for the pension to
+remain grandfathered, the owner must still be in receipt of this Centrelink Payment (i.e Age/Disability
+Pension)."
+                            ></i>
+                        </label>
+
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="gFatherIncomeStream2" name="gFatherIncomeStream" onchange="gFatherIncomeOptions(this.value)" type="radio" value="0" />
+                            <label for="gFatherIncomeStream2">No</label>
+                            <input id="gFatherIncomeStream1" name="gFatherIncomeStream" onchange="gFatherIncomeOptions(this.value)" type="radio" value="1" />
+                            <label for="gFatherIncomeStream1">Yes</label>
+
+                            <br />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 gfatherIncomeOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./piggy-bank-new.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Account Balance</h4>
+                                    <label for="gFatherCurrentAccountValue">You</label>
+                                    <input class="form-control" id="gFatherCurrentAccountValue" name="gFatherCurrentAccountValue" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+
+                                    <div class="wife">
+                                        <label for="wifeGFatherCurrentAccountValue">Partner</label>
+                                        <input class="form-control" id="wifeGFatherCurrentAccountValue" name="wifeGFatherCurrentAccountValue" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 gfatherIncomeOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./money-3.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Annual Pension Payment</h4>
+                                    <label for="gFatherAnnualPension">You </label>
+                                    <input class="form-control" id="gFatherAnnualPension" name="gFatherAnnualPension" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+
+                                    <div class="wife">
+                                        <label for="gFatherAnnualPensionWife">Partner</label>
+                                        <input class="form-control" id="gFatherAnnualPensionWife" name="gFatherAnnualPensionWife" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 gfatherIncomeOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./paper-bill.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">
+                                        Annual Deductible Amount
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="You can find this information on the DVA/Centrelink schedule supplied to you by your
+product provider. If you don’t know this amount or are unsure leave this section blank and
+our age pension calculator will understate the amount you may receive under the income
+test."
+                                        ></i>
+                                    </h4>
+
+                                    <label for="gFatherAnnualDeductible">You </label>
+                                    <input class="form-control" id="gFatherAnnualDeductible" name="gFatherAnnualDeductible" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+
+                                    <div class="wife">
+                                        <label for="gFatherAnnualDeductibleWife">Partner</label>
+                                        <input class="form-control" id="gFatherAnnualDeductibleWife" name="gFatherAnnualDeductibleWife" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(5)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+
+                        <button class="btn btn-success float-right col-md-4" onclick="step(7)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="step-7">
+                    <div class="col-md-12">
+                        <h3 class="mt-2 green">Lifetime Income Stream</h3>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="yourOtherIncomeStream1">
+                            Do you have any other Lifetime Income Streams?
+                            <i
+                                    class="fas fa-question-circle"
+                                    data-toggle="tooltip"
+                                    title="This is where you receive regular payments often on a fortnightly basis that will continue until
+you die. In some cases, if you die before your partner they may continue to receive a
+payment in a reduced amount."
+                            ></i>
+                        </label>
+
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="yourOtherIncomeStream2" name="yourOtherIncomeStream" onchange="yourOtherIncomeOptions(this.value)" type="radio" value="0" />
+                            <label for="yourOtherIncomeStream2">No</label>
+                            <input id="yourOtherIncomeStream1" name="yourOtherIncomeStream" onchange="yourOtherIncomeOptions(this.value)" type="radio" value="1" />
+                            <label for="yourOtherIncomeStream1">Yes</label>
+
+                            <br />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 yourOtherIncomeOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./money-3.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Annual Pension Payment</h4>
+                                    <label for="yourAnnualPension">You</label>
+                                    <input class="form-control" id="yourAnnualPension" name="yourAnnualPension" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+
+                                    <div class="wife">
+                                        <label for="yourAnnualPensionWife">Partner </label>
+                                        <input class="form-control" id="yourAnnualPensionWife" name="yourAnnualPensionWife" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 yourOtherIncomeOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./paper-bill.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">
+                                        Annual Deductible Amount
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="You can find this information by contacting your product provider. If you don’t know this
+amount or are unsure leave this section blank and our age pension calculator will understate
+the amount you may receive under the income test."
+                                        ></i>
+                                    </h4>
+                                    <label for="yourAnnualDeductible">You</label>
+                                    <input class="form-control" id="yourAnnualDeductible" name="yourAnnualDeductible" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+
+                                    <div class="wife">
+                                        <label for="yourAnnualDeductibleWife">Partner </label>
+                                        <input class="form-control" id="yourAnnualDeductibleWife" name="yourAnnualDeductibleWife" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(6)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+
+                        <button class="btn btn-success float-right col-md-4" onclick="step(8)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="step-8">
+                    <div class="col-md-12 mt-3">
+                        <h3 class="mt-2 green">Income from Working</h3>
+                        <label for="workingIncome1">
+                            Do you receive any income from working including any self-employed income as a sole trader or via a partnership?
+                            <i
+                                    class="fas fa-question-circle"
+                                    data-toggle="tooltip"
+                                    title=" If you are employed please enter in your total gross salary including any salary sacrfice amounts. If
+you are self-employed please enter in your share of the net business income."
+                            ></i>
+                        </label>
+
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="workingIncome2" name="workingIncome" onchange="workingIncomeOptions(this.value)" type="radio" value="0" />
+                            <label for="workingIncome2">No</label>
+                            <input id="workingIncome1" name="workingIncome" onchange="workingIncomeOptions(this.value)" type="radio" value="1" />
+                            <label for="workingIncome1">Yes</label>
+
+                            <br />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 workingIncomeOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./businessman.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Gross Salary /Net Business Income</h4>
+                                    <label for="grossSalary">You</label>
+                                    <input class="form-control" id="grossSalary" name="grossSalary" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <div class="wife">
+                                        <label for="grossSalaryWife">Partner</label>
+                                        <input class="form-control" id="grossSalaryWife" name="grossSalaryWife" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(7)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+                        <button class="btn btn-success float-right col-md-4" onclick="step(9)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="step-9">
+                    <div class="col-md-12 mt-3">
+                        <h3 class="mt-2 green">Other Income</h3>
+                        <label for="workingIncome1">Do you receive any other income from other sources such as overseas pensions? </label>
+
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="otherIncomeOptions2" name="otherIncomeOptions" onchange="otherIncomeOptions(this.value)" type="radio" value="0" />
+                            <label for="otherIncomeOptions2">No</label>
+                            <input id="otherIncomeOptions1" name="otherIncomeOptions" onchange="otherIncomeOptions(this.value)" type="radio" value="1" />
+                            <label for="otherIncomeOptions1">Yes</label>
+
+                            <br />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 otherIncomeOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./overseas.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="text-center">Overseas Pension/Other Income</h4>
+                                    <label for="overseasIncome">You</label>
+                                    <input class="form-control" id="overseasIncome" name="overseasIncome" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+
+                                    <div class="wife">
+                                        <label for="overseasIncomeWife">Partner</label>
+                                        <input class="form-control" id="overseasIncomeWife" name="overseasIncomeWife" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(8)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+                        <button class="btn btn-success float-right col-md-4" onclick="step(10)">
+                            <i class="fas fa-angle-double-right"></i>
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="step-10">
+                    <div class="col-md-12 mt-3">
+                        <h3 class="mt-2 green">Companies or Trusts</h3>
+                        <label for="businessIncomeOptions1">Are you involved in any business?</label>
+                        <div style="text-align: center; margin-top: 5%;">
+                            <input checked id="businessIncomeOptions2" name="businessIncomeOptions" onchange="businessIncomeOptions(this.value)" type="radio" value="0" />
+                            <label for="businessIncomeOptions2">No</label>
+                            <input id="businessIncomeOptions1" name="businessIncomeOptions" onchange="businessIncomeOptions(this.value)" type="radio" value="1" />
+                            <label for="businessIncomeOptions1">Yes</label>
+
+                            <br />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 businessIncomeOptions mt-3">
+                        <div class="card h-100 p-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="img" class="img-responsive w-100" src="./business.svg" />
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="netAssets">
+                                        You- Net Assets
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="Enter in your share of the Net Assets of any Company or Trust that you are
+involved in. For example, if you own 50% of the shares in a private company then only enter
+in your share."
+                                        ></i>
+                                    </label>
+                                    <input class="form-control" id="netAssets" name="netAssets" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <label for="netProfit">
+                                        You- Net Profits
+
+                                        <i
+                                                class="fas fa-question-circle"
+                                                data-toggle="tooltip"
+                                                title="Enter in your share of the Net Profit of any Company or Trust that you are
+involved in. For example, if you own 50% of the shares in a private company then only enter
+in your 50% share of the net profits."
+                                        ></i>
+                                    </label>
+                                    <input class="form-control" id="netProfit" name="netProfit" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    <br />
+                                    <div class="wife">
+                                        <label for="netAssetsWife">
+                                            Partner's- Net Assets
+                                            <i
+                                                    class="fas fa-question-circle"
+                                                    data-toggle="tooltip"
+                                                    title="Enter in your partner's share of the Net Assets of any Company or Trust that you are
+involved in. For example, if you own 50% of the shares in a private company then only enter
+in your share."
+                                            ></i>
+                                        </label>
+                                        <input class="form-control" id="netAssetsWife" name="netAssetsWife" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                        <br />
+                                        <label for="netProfitWife">
+                                            Partner's- Net Profits
+                                            <i
+                                                    class="fas fa-question-circle"
+                                                    data-toggle="tooltip"
+                                                    title="Enter in your partner's share of the Net Profit of any Company or Trust that you are
+involved in. For example, if you own 50% of the shares in a private company then only enter
+in your 50% share of the net profits."
+                                            ></i>
+                                        </label>
+                                        <input class="form-control" id="netProfitWife" name="netAssetsWife" onkeyup="format(this)" placeholder="Please Enter Value in $" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <button class="btn btn-dark float-left col-md-4" onclick="step(9)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+
+                        <button class="btn btn-success float-right col-md-4" data-target="#staticBackdrop" data-toggle="modal" type="button">
+                            <i class="fas fa-print"></i>
+                            Results
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="step-11">
+                    <div class="col-md-12 mt-3">
+                        <div class="row pl-2">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <h3 class="text-center green bold">Your Results</h3>
+                                <img alt="xyz" class="w-55 img-fluid" src="./pensioner-2.svg" width="60%" />
+                            </div>
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-12 text-center pt-2">
+                                <p class="bold">
+                                    Your estimated Age Pension entitlements is <span class="fortnight">$0</span> per fortnight based upon your scenario. This will provide you with an annual amount of
+                                    <span class="fortnightAnnual">$0</span> from Centrelink.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="float-left col-md-4 text-center">
+                            <img alt="xyz" class="img-fluid" src="./svgtopng/house.png" width="40%" />
+                            <h5 class="text-center small">Homeowner</h5>
+                            <p class="bold" id="isHomeOwner">Not Selected</p>
+                        </div>
+                        <div class="float-right col-md-4 text-center">
+                            <img alt="xyz" class="w-55 img-fluid" src="./svgtopng/relationship-love-heart-valentine-romance-couple.png" width="40%" />
+                            <br />
+                            <h5 class="small">Relationship</h5>
+                            <p class="bold" id="relationship">Not Selected</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="float-left col-md-4 text-center">
+                            <h5 class="text-center mb-3 fira">Assets Test</h5>
+                            <img alt="xyz" class="img-fluid" src="./svgtopng/assets.png" width="60%" />
+                            <h5 class="text-center small">Lower Threshold</h5>
+                            <p class="bold" id="ALower">$0</p>
+                            <h5 class="text-center small">Upper Threshold</h5>
+                            <p class="bold" id="AHigher">$0</p>
+                            <h5 class="text-center small">Assessable Assets</h5>
+                            <p class="bold" id="AAssessable">$0</p>
+                            <h5 class="text-center small">Excess Assets</h5>
+                            <p class="bold" id="AExcess">$0</p>
+                        </div>
+                        <div class="float-right col-md-4 text-center">
+                            <h5 class="text-center mb-3 fira">Income Test</h5>
+                            <img alt="xyz" class="w-55 img-fluid" src="./svgtopng/money-4.png" width="60%" />
+                            <br />
+                            <h5 class="text-center small">Lower Threshold</h5>
+                            <p class="bold" id="ILower">$0</p>
+                            <h5 class="text-center small">Upper Threshold</h5>
+                            <p class="bold" id="IHigher">$0</p>
+                            <h5 class="text-center small">Assessable Income</h5>
+                            <p class="bold" id="IAssessable">$0</p>
+                            <h5 class="text-center small">Excess Income</h5>
+                            <p class="bold" id="IExcess">$0</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 text-center mt-3 bold">
+                        <p>
+                            Centrelink will assess you both under the Asset Test and Income Test and the one that provides the lower result will be the actual payment you receive. The payments above include any supplements (pension
+                            and clean energy).
+                        </p>
+
+                        <p>
+                            The estimated entitlements are based on the Information you have entered into this calculator and should only be used as a guide.
+                        </p>
+                        <h4 class="blue text-center fira bold mt-5">Let Denaro Link Help You.</h4>
+                        <div class="gray-bg p-4">
+                            <h4 class="text-center fira bold">
+                                WE DON’T JUST FILL IN FORMS. <br />
+                                WE GO TO BAT FOR YOU WITH CENTRELINK
+                            </h4>
+                            <p class="pl-2 mt-2 text-center" style="font-size: 12px;">
+                                we’ll guide you through the process and deal with Centrelink on your behalf
+                            </p>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5 class="blue text-center">
+                                        <img alt="POM" class="img-fluid w-25" src="./svgtopng/3.png" />
+                                        <br />
+                                        CONVENIENCE
+                                    </h5>
+                                    <br />
+                                    <p class="PDFp text-center">We’ll look after all the face-to-face and phone conversations with Centrelink and submit your paperwork.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5 class="blue text-center">
+                                        <img alt="POM" class="img-fluid" src="./svgtopng/2.png" width="30%" />
+                                        <br />
+                                        CONFIDENCE
+                                    </h5>
+                                    <br />
+                                    <p class="PDFp text-center">
+                                        Be certain you’re getting the maximum Centrelink entitlements and seniors discounts you’re eligible for.
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5 class="blue text-center">
+                                        <img alt="POM" class="img-fluid" src="./svgtopng/1.png" width="30%" />
+                                        <br />
+                                        PEACE OF MIND
+                                    </h5>
+                                    <br />
+                                    <p class="PDFp text-center">
+                                        Go on and enjoy this exciting time of your life. Rest easy knowing that an experienced team of specialists has your back.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-3" style="font-family: 'Fira Sans Condensed', sans-serif;">
+                                <h5 class="blue text-center" style="font-size: 17px;">
+                                    At Denaro Link we will do everything we can to get you your maximum Age Pension and concession card Entitlements. And we make the whole process as easy as possible for you.
+                                </h5>
+
+                                <h5 class="mt-3 mb-3 text-center" style="font-size: 16px;">
+                                    If you have any questions you can email us at denarolink@denarowealth.com.au or phone us on 0435535513 and one of our Centrelink Experts will be able to assist you further.
+                                </h5>
+
+                                <h5 class="blue text-center">
+                                    <a href="https://www.denarolink.com.au" style="color: #36b446; "> www.denarolink.com.au</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2 text-center" id="optionalContent">
+                        <p class="pl-2 bold">By qualifying for $1 of age pension you will be entitled to the Pensioners Concession Card. This entitles you to the following:</p>
+                        <ul class="text-left bold">
+                            <li>Cheaper medicine under the Pharmaceutical Benefits Scheme (PBS)</li>
+                            <li>Bulk billed doctor visits - this is up to your doctor</li>
+                            <li>A bigger refund for medical costs when you reach the Medicare Safety Net.</li>
+                            <li>
+                                The additional concessions may include reductions on your:
+                                <ul>
+                                    <li>electricity and gas bills</li>
+                                    <li>property and water rates</li>
+                                    <li>public transport fare</li>
+                                    <li>motor vehicle registration</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p class="bold">These concessions may vary between state, local or territory governments.</p>
+                        <div class="text-center">
+                            <img alt="pension-card" src="https://www.servicesaustralia.gov.au/sites/default/files/2021-10/pcc-rear.jpg" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" id="buttons">
+                        <button class="btn btn-dark col-sm-12 col-md-4" onclick="step(9)">
+                            <i class="fas fa-angle-double-left"></i>
+                            Previous
+                        </button>
+
+                        <button class="btn btn-success ml-2 col-sm-12 col-md-3" onclick="location.reload()">
+                            <i class="fas fa-refresh"></i>
+                            Restart
+                        </button>
+                        <!-- Button trigger modal -->
+                        <button class="btn btn-info ml-2 col-sm-12 col-md-4" data-target="#staticBackdrop" data-toggle="modal" type="button">
+                            <i class="fas fa-print"></i>
+                            Download PDF
+                        </button>
+                    </div>
+
+                    <div class="col-md-12 text-left" id="PDF-content" style="display: block;">
+                        <div class="row">
+                            <div class="col-md-12 mt-5">
+                                <div class="front-page mt-5">
+                                    <div class="header">
+                                        <h1 class="text-center"><img src="./svgtopng/final-logo.png" alt="logo" class="img-fluid w-25" /></h1>
+                                        <h1 class="blue text-center" style="margin-top: 40%;">AGE PENSION CALCULATOR REPORT</h1>
+                                    </div>
+                                    <div class="greenbar mb-1" style="border: 1px solid #36b446;"></div>
+                                    <div class="footer text-center bold" style="margin-top: 44%; padding-top: 7%; font-size: 10px;">
+                                        <p class="m-0 p-0">www.denarolink.com.au</p>
+                                        <p class="m-0 p-0">Denaro Link is a service of Denaro Wealth Pty Ltd</p>
+                                        <p class="m-0 p-0">2023 Denaro Wealth Pty Ltd. All Rights Reserved</p>
+                                        <p class="m-0 p-0">Denaro Wealth Pty Ltd is an authorised representative of Lifespan Financial Planning Pty Ltd ASFL 229892</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-center green bold">Your Results</h3>
+                        <div class="text-center pt-2">
+                            <p class="bold">
+                                Your estimated Age Pension entitlements is <span class="fortnight">$0</span> per fortnight based upon your scenario. This will provide you with an annual amount of
+                                <span class="fortnightAnnual">$0</span> from Centrelink.
+                            </p>
+
+                            <img alt="xyz" class="img-fluid w-25" src="./svgtopng/pensioner-2.png" />
+                        </div>
+                        <div class="text-center mt-3 bold">
+                            <p>
+                                Centrelink will assess you both under the Asset Test and Income Test and the one that provides the lower result will be the actual payment you receive. The payments above include any supplements
+                                (pension and clean energy).
+                            </p>
+
+                            <p>
+                                The estimated entitlements are based on the Information you have entered into this calculator and should only be used as a guide.
+                            </p>
+                        </div>
+
+                        <h4 class="blue text-center">Pension Concession Card</h4>
+                        <div class="row">
+                            <div class="col-md-6 mt-2"><img alt="front" src="./pcc-front.webp" width="100%" /></div>
+                            <div class="col-md-6 mt-2"><img alt="back" src="./pcc-rear.webp" width="100%" /></div>
+                        </div>
+
+                        <p class="text-justify mt-2">As long as you qualify for $1 of age pension you will be entitled to the Pensioners Concession Card. This entitles you to the following:</p>
+                        <ul>
+                            <li>Cheaper medicine under the Pharmaceutical Benefits Scheme (PBS)</li>
+                            <li>Bulk billed doctor visits - this is up to your doctor</li>
+                            <li>A bigger refund for medical costs when you reach the Medicare Safety Net.</li>
+                            <li>
+                                The additional concessions may include reductions on your:
+                                <ul>
+                                    <li>electricity and gas bills</li>
+                                    <li>property and water rates</li>
+                                    <li>public transport fare</li>
+                                    <li>motor vehicle registration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                        <h4 class="blue text-center fira bold mt-2">Let Denaro Link Help You.</h4>
+                        <div class="gray-bg p-4">
+                            <h4 class="text-center fira bold">
+                                WE DON’T JUST FILL IN FORMS. <br />
+                                WE GO TO BAT FOR YOU WITH CENTRELINK
+                            </h4>
+                            <p class="text-justify mt-2 text-center" style="font-size: 12px;">
+                                we’ll guide you through the process and deal with Centrelink on your behalf
+                            </p>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h6 class="blue text-center">
+                                        <img alt="POM" class="img-fluid w-25" src="./svgtopng/3.png" />
+                                        <br />
+                                        CONVENIENCE
+                                    </h6>
+                                    <br />
+                                    <p class="PDFp text-center">We’ll look after all the face-to-face and phone conversations with Centrelink and submit your paperwork.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="blue text-center">
+                                        <img alt="POM" class="img-fluid" src="./svgtopng/2.png" width="30%" />
+                                        <br />
+                                        CONFIDENCE
+                                    </h6>
+                                    <br />
+                                    <p class="PDFp text-center">
+                                        Be certain you’re getting the maximum Centrelink entitlements and seniors discounts you’re eligible for.
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="blue text-center">
+                                        <img alt="POM" class="img-fluid" src="./svgtopng/1.png" width="30%" />
+                                        <br />
+                                        PEACE OF MIND
+                                    </h6>
+                                    <br />
+                                    <p class="PDFp  text-center">
+                                        Go on and enjoy this exciting time of your life. Rest easy knowing that an experienced team of specialists has your back.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-1" style="font-family: 'Fira Sans Condensed', sans-serif;">
+                                <h5 class="blue text-center" style="font-size: 17px;">
+                                    At Denaro Link we will do everything we can to get you your maximum Age Pension and concession card Entitlements. And we make the whole process as easy as possible for you.
+                                </h5>
+
+                                <h5 class="mt-3 mb-3 text-center" style="font-size: 16px;">
+                                    If you have any questions you can email us at denarolink@denarowealth.com.au or phone us on 0435535513 and one of our Centrelink Experts will be able to assist you further.
+                                </h5>
+
+                                <h5 class="blue text-center">
+                                    <a href="https://www.denarolink.com.au" style="color: #36b446;"> www.denarolink.com.au</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <!--                        third-->
+                        <div class="html2pdf__page-break"></div>
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+
+                        <h4 class="blue">AGE PENSION</h4>
+                        <p class="text-justify">
+                            To qualify for the Age Pension a person must reach age pension age. The age of when this occurs will be based upon the person’s date of birth. The Following table can help to demonstrate this:
+                        </p>
+
+                        <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="table1">
+                            <thead class="text-white bg-green">
+                            <tr>
+                                <th>Born between</th>
+                                <th>Eligible for Age Pension at age</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1 July 1955 and 31 Dec 1956</td>
+                                <td>66.5</td>
+                            </tr>
+                            <tr>
+                                <td>From 1 Jan 1957 and Onwards</td>
+                                <td>67.0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br />
+                        <p class="text-justify">The person claiming the Age Pension must be in Australia and an Australian resident.To be eligible for Age Pension you must satisfy residence requirements. You must be:</p>
+
+                        <ul>
+                            <li>An Australian resident on the day you lodge your claim, and</li>
+                            <li>Be physically present in Australia on the day you lodge your claim</li>
+                        </ul>
+
+                        <p class="text-justify mt-2">
+                            You also need to have been an Australian resident for a continuous period of at least 10 years, or for a number of periods that total more than ten years, with one of the periods being at least five
+                            years, unless you:
+                        </p>
+
+                        <ul>
+                            <li>are a refugee or former refugee, or</li>
+                            <li>were getting Partner Allowance, Widow Allowance or Widow B Pension immediately before turning Age Pension age, or</li>
+                            <li>are a woman whose partner died while you were both Australian residents, and you have been an Australian resident for two years immediately before claiming Age Pension</li>
+                        </ul>
+
+                        <p class="text-justify mt-2">If you have lived or worked in a country with which Australia has an international social security agreement, it may help you meet these residence requirements.</p>
+
+                        <p class="text-justify mt-2">
+                            A person’s Age Pension entitlement is calculated by Centrelink after applying an income and asset test. The test that produces the lowest entitlement will determine the amount of Age Pension a person will
+                            receive. The Centrelink rules provide specific definitions of what they assessed to be an asset and income under both tests.
+                        </p>
+
+                        <!--                        third-->
+                        <div class="html2pdf__page-break"></div>
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+
+                        <h4 class="blue">HOW MUCH PENSION DO I GET?</h4>
+                        <p class="text-justify mt-2">
+                            The maximum rate of age pension is based upon the following table. Refer to:
+                            <a
+                                    href="https://www.humanservices.gov.au/individuals/services/centrelink/age-
+                            pension/eligibility/payment-rates"
+                            >
+                                https://www.humanservices.gov.au/individuals/services/centrelink/age- pension/eligibility/payment-rates
+                            </a>
+                        </p>
+                        <p class="text-justify mt-2">These figures are currently adjusted for CPI on twice a year (every 6 months) and occur on the 20the of march and 20th September.</p>
+
+                        <br />
+
+                        <h4 class="blue">THE ASSET TEST</h4>
+
+                        <p class="text-justify mt-1">The asset test thresholds are shown in the table below For every $1,000 of assets above the lower limits, your fortnightly pension reduces by $3.00 per fortnight.</p>
+                        <p class="text-justify mt-1">Refer to: <a href="https://www.humanservices.gov.au/individuals/enablers/assets/30621">https://www.humanservices.gov.au/individuals/enablers/assets/30621</a></p>
+
+                        <p class="text-justify mt-1">Assets can include:</p>
+
+                        <ul>
+                            <li>Home contents, cars, boats and caravans</li>
+                            <li>Antiques, stamp or coin collections</li>
+                            <li>Superannuation over age pension age</li>
+                            <li>Account Based Pensions</li>
+                            <li>Real property</li>
+                            <li>Shares in private companies, discretionary trusts</li>
+                            <li>Long-term Annuities</li>
+                            <li>licenses, for example fishing or taxi</li>
+                            <li>surrender value of life insurance policies</li>
+                            <li>collections for trading, investment or hobby purposes, and</li>
+                            <li>Generally, any debt secured against an asset is deducted from the value of that asset.</li>
+                        </ul>
+                        <div class="html2pdf__page-break"></div>
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                        <h4 class="blue">GIFTING</h4>
+                        <p class="text-justify mt-2">
+                            In order to prevent you from simply giving away your assets to qualify for age pension and other income support payments , Centrelink and DVA have introduced rules that impact income support recipients
+                            who “gift” away their assets.These gifting rules can be summarised as follows:
+                        </p>
+
+                        <ul>
+                            <li>
+                                Two tests apply in respect of asset gifting:
+                                <ul>
+                                    <li>
+                                        a maximum of $10,000 in gifts is allowed in a single financial year (for both singles and couples combined), and
+                                    </li>
+                                    <li>a maximum of $30,000 in gifts is allowed over a five-year rolling period (singles or couples combined).</li>
+                                </ul>
+                            </li>
+                            <li>Gifts outside this limit will be class as 'deprived assets'.</li>
+                            <li>The deprived assets will count under the assets test for five years from the date of gift and will be subject to deeming under the income test for the same period.</li>
+                        </ul>
+
+                        <p class="text-justify mt-2">
+                            From a practical sense, the gifting rules carried out by Centrelink and DVA will involve two tests. Firstly, they will look at whether the gift is within the $10,000 per financial year that is allowable.
+                            Secondly, they will also test whether the $30,000 limit over a five-year rolling period is satisfied. The combination of these tests will determine whether the client has any deprived assets for a period
+                            of 5 years.
+                        </p>
+                        <p class="text-justify mt-2">
+                            The $30,000 limit over a 5-year rolling period is also extended to include the 5-year pre-pension period. That is, the 5 years in the lead up to a client first being entitled to a Centrelink benefit.
+                        </p>
+                        <br />
+                        <div class="html2pdf__page-break"></div>
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                        <h4 class="blue">THE INCOME TEST</h4>
+                        <p class="text-justify mt-2">
+                            The income thresholds are shown in the table below. Income above the lower threshold reduces the pension by 50 cents in the dollar (single) and 25 cents in the dollar each (for couple).
+                        </p>
+                        <p class="text-justify mt-2">
+                            The maximum rate of age pension is based upon the following table. Refer to:
+                            <a
+                                    href="https://www.humanservices.gov.au/individuals/enablers/income-test-
+pensions/30406"
+                            >
+                                https://www.humanservices.gov.au/individuals/enablers/income-test- pensions/30406
+                            </a>
+                        </p>
+                        <p class="text-justify mt-2">Examples of assessable income include:</p>
+                        <ul>
+                            <li>deemed income from financial investments, including money in superannuation funds if you have reached age pension age</li>
+                            <li>Money in Account based pensions</li>
+                            <li>
+                                gross employment income- earnings for work performed including wages, salaries, bonuses, penalty rates, overtime, commission or honoraria, and stipends including fringe benefits and amounts salary
+                                sacrificed into superannuation
+                            </li>
+                            <li>net business income</li>
+                            <li>distributions or dividends from private trusts and private companies</li>
+                            <li>real estate income[including net income or losses from rental property, and income from boarders and lodgers</li>
+                            <li>reportable superannuation contributions</li>
+                            <li>income from outside Australia[including non-Australian pensions and other income from sources outside Australia</li>
+                            <li>some lump sums</li>
+                        </ul>
+
+                        <!--                        second last-->
+                        <div class="html2pdf__page-break"></div>
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                        <h4 class="blue">DEEMING</h4>
+                        <h5 class="blue text-left">What is deeming?</h5>
+
+                        <p class="text-justify mt-2">
+                            Deeming is the term which describes the method used by Centrelink and Veteran’s Affairs to calculate your assessable income from certain investments when determining the level of entitlement to be paid.
+                            Deeming means that you are assumed to earn a certain return on ‘financial’ investments, irrespective of the actual rate of interest or capital growth you earn.
+                        </p>
+
+                        <p class="text-justify mt-2">
+                            If you earn more than the deemed rate on your investments, the excess will not be included in the income test and will not affect your Centrelink payment. However, if the investment earns less than the
+                            deemed rate, you will still be assessed as earning income at the deemed rate.
+                        </p>
+                        <p class="text-justify mt-2">
+                            The income test then combines the deemed income with income earned from other sources you receive to work out your entitlements under the income test.
+                        </p>
+
+                        <h4 class="blue">How does deeming work?</h4>
+                        <p class="text-justify mt-2">
+                            To work out the level of deemed income that your financial investments earn you simply apply the following rates in regards to the amount of total financial assets you hold. For the current deeming rates
+                            refer to :
+                            <a href="https://www.humanservices.gov.au/individuals/enablers/deeming">https://www.humanservices.gov.au/individuals/enablers/deeming</a>
+                        </p>
+                        <p class="text-justify mt-2">
+                            The Government changes the deeming rate from time to time to reflect market conditions and most financial institutions offer special accounts that pay interest at the deeming rate.
+                        </p>
+                        <p class="text-justify mt-2">
+                            For pensioner couples (where at least one partner is receiving a pension), the financial assets are combined, for non-pensioner couples (where neither partner is receiving a pension) financial assets are
+                            assessed individually.
+                        </p>
+
+                        <div class="html2pdf__page-break"></div>
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                        <h4 class="blue">Which assets are assessed using deeming?</h4>
+                        <p class="text-justify mt-2">Deeming applies to financial investments, which include:</p>
+
+                        <ul>
+                            <li>Cash</li>
+                            <li>Bank, building society, credit union accounts and term deposits</li>
+                            <li>Most friendly society bonds and insurance bonds</li>
+                            <li>Managed investments and shares in public companies</li>
+                            <li>Superannuation in accumulation after age pension age</li>
+                            <li>Bonds, debentures and loans, including private loans</li>
+                            <li>Gifts above the allowed amount</li>
+                            <li>Gold and other bullion</li>
+                            <li>Account based pension purchased from 1 January 2015. Other ones maybe exempt.</li>
+                        </ul>
+
+                        <p class="text-justify mt-2">Financial investments do not include:</p>
+                        <ul>
+                            <li>Your home and its contents, cars, boats and caravans</li>
+                            <li>Antiques, stamp or coin collections</li>
+                            <li>Superannuation under age pension age</li>
+                            <li>Standard life insurance policies</li>
+                            <li>Funeral bonds</li>
+                            <li>Real property</li>
+                            <li>Shares in private companies, discretionary trusts</li>
+                            <li>Long-term Annuities</li>
+                        </ul>
+
+                        <div class="html2pdf__page-break"></div>
+
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                        <div class="row">
+                            <div class="col-md-12 mt-1">
+                                <h4 class="blue text-center">Assets and Income Test Summary</h4>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <div class="float-left col-md-6 text-center">
+                                    <img alt="xyz" class="img-fluid" src="./svgtopng/609749.png" width="18%" />
+                                    <h5 class="text-center">Homeowner</h5>
+                                    <p class="bold" id="isHomeOwner2">Not Selected</p>
+                                </div>
+                                <div class="float-right col-md-6 text-center">
+                                    <img alt="xyz" class="img-fluid" src="./svgtopng/relationship-love-heart-valentine-romance-couple.png" width="20%" />
+                                    <br />
+                                    <h5 class="">Relationship</h5>
+                                    <p class="bold" id="relationship2">Not Selected</p>
+                                </div>
+
+                                <div class="float-left col-md-6 text-center">
+                                    <h5 class="text-center mb-3 fira">Assets Test</h5>
+                                    <img alt="xyz" class="img-fluid w-25" src="./svgtopng/down.png" /><br />
+                                    <h5 class="text-center">Lower Threshold</h5>
+                                    <p class="bold" id="ALower2">$0</p>
+                                    <img alt="xyz" class="img-fluid w-25" src="./svgtopng/Untitled-1.png" /><br />
+                                    <h5 class="text-center">Upper Threshold</h5>
+                                    <p class="bold" id="AHigher2">$0</p>
+                                    <img alt="xyz" class="img-fluid" src="./svgtopng/1907675.png" width="20%" /><br />
+                                    <h5 class="text-center">Assessable Assets</h5>
+                                    <p class="bold" id="AAssessable2">$0</p>
+                                    <img alt="xyz" class="img-fluid" src="./svgtopng/1728914.png" width="20%" /><br />
+                                    <h5 class="text-center">Excess Assets</h5>
+                                    <p class="bold" id="AExcess2">$0</p>
+                                </div>
+                                <div class="float-right col-md-6 text-center">
+                                    <h5 class="text-center mb-3 fira">Income Test</h5>
+                                    <img alt="xyz" class="img-fluid" src="./svgtopng/2e42b7aac5554e35423e3f0df1307255.png" width="20%" />
+                                    <br />
+                                    <h5 class="text-center">Lower Threshold</h5>
+                                    <p class="bold" id="ILower2">$0</p>
+                                    <img alt="xyz" class="img-fluid" src="./svgtopng/depositphotos_211850546-stock-illustration-coin-icon-vector-isolated-white.jpg" width="20%" />
+                                    <br />
+                                    <h5 class="text-center">Upper Threshold</h5>
+                                    <p class="bold" id="IHigher2">$0</p>
+                                    <img alt="xyz" class="img-fluid" src="./svgtopng/download.png" width="20%" />
+                                    <br />
+                                    <h5 class="text-center">Assessable Income</h5>
+                                    <p class="bold" id="IAssessable2">$0</p>
+                                    <img alt="xyz" class="img-fluid" src="./svgtopng/1101624.png" width="21%" />
+                                    <br />
+                                    <h5 class="text-center">Excess Income</h5>
+                                    <p class="bold" id="IExcess2">$0</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="html2pdf__page-break"></div>
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                        <div class="col-md-12">
+                            <h4 class="blue">Your Information</h4>
+                            <p class="">Below is a summary of the information that you have entered in the Age Pension Calculator to arrive at your estimated entitlements.</p>
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;" id="resultTable1">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Personal Info</th>
+                                        <th>Client</th>
+                                        <th>Partner</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Date of Birth</td>
+                                        <td id="DOB">1/1/1952</td>
+                                        <td id="DOB2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Homeowner</td>
+                                        <td colspan="2" id="homeOwner">No</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Home Loan Amount</td>
+                                        <td colspan="2" id="homeLoanAmount">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Home on greater than 2 Acres</td>
+                                        <td colspan="2" id="greaterThan2Acre">No</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Have Clients Gifted any Assets</td>
+                                        <td colspan="2" id="giftedAsset">No</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="resultTable2">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Lifestyle Assets</th>
+                                        <th>Client</th>
+                                        <th>Partner</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Cars</td>
+                                        <td id="car">$0</td>
+                                        <td id="car2">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contents</td>
+                                        <!-- <td colspan="2" id="content">$0</td> -->
+                                        <td colspan="2" id="content">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Boats</td>
+                                        <!-- <td colspan="2" id="boat">$0</td> -->
+                                        <td colspan="2" id="boat">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caravan</td>
+                                        <!-- <td colspan="2" id="caravan">$0</td> -->
+                                        <td colspan="2" id="caravan">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Others</td>
+                                        <!-- <td colspan="2" id="others">$0</td> -->
+                                        <td colspan="2" id="others">$0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="html2pdf__page-break"></div>
+                            <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                            <div class="table-responsive mt-2">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="resultTable3">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Financial Assets</th>
+                                        <th>Client</th>
+                                        <th>Partner</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Saving Accounts/Term Deposits</td>
+                                        <td id="savings">$0</td>
+                                        <td id="savings2">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Superannuation</td>
+                                        <td id="Superannuation">$0</td>
+                                        <td id="Superannuation2">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Account Based Pensions</td>
+                                        <td id="ABP">$0</td>
+                                        <td id="ABP2">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Share Portfolio</td>
+                                        <td id="sharePortfolio">$0</td>
+                                        <td id="sharePortfolio2">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Managed Funds</td>
+                                        <td id="managedFunds">$0</td>
+                                        <td id="managedFunds2">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Investment Loans</td>
+                                        <td id="investmentLoan">$0</td>
+                                        <td id="investmentLoan2">$0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="resultTable4">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Other Properties</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Market Value</td>
+                                        <td  id="marketValue">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loan Balance</td>
+                                        <td  id="loanBalance">$0</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Rent Received</td>
+                                        <td id="rent">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frequency</td>
+                                        <td id="frequency">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Annual Expenses</td>
+                                        <td id="annualExpense">$0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
+
+                            <br />
+                            <div class="html2pdf__page-break"></div>
+                            <div class="greenbar" style="border: 1px solid #36b446;"></div>
+
+                            <div class="table-responsive mt-2">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="resultTable5">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Other Account Based Pensions</th>
+                                        <th>Client</th>
+                                        <th>Partner</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Account Balance</td>
+                                        <td id="ab">$0</td>
+                                        <td id="ab2">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Annual Pension Payment</td>
+                                        <td id="apa">$0</td>
+                                        <td id="apa2" >$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Annual Deductible Amount</td>
+                                        <!-- <td id="ada">$0</td> -->
+                                        <!-- <td id="ada2">$0</td> -->
+                                        <td id="adaG">$0</td>
+                                        <td id="adaG2">$0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="resultTable6">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Lifetime Income Stream</th>
+                                        <th>Client</th>
+                                        <th>Partner</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Annual Pension Amount</td>
+                                        <!-- <td id="apa">$0</td>
+                                        <td id="apa2">$0</td> -->
+                                        <td id="app" >$0</td>
+                                        <td id="app2">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Annual Deductible Amount</td>
+                                        <!-- <td id="adaG">$0</td> -->
+                                        <!-- <td id="adaG2">$0</td> -->
+                                        <td  id="ada">$0</td>
+                                        <td  id="ada2">$0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="resultTable7">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Income From Working</th>
+                                        <th>Client</th>
+                                        <th>Partner</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Gross Salary /Net Business Income</td>
+                                        <td id="grossSalary1">$0</td>
+                                        <td id="grossSalary2">$0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="resultTable8">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Other Income</th>
+                                        <th>Client</th>
+                                        <th>Partner</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Overseas Pension/Other Income</td>
+                                        <td id="overseasIncome1">$0</td>
+                                        <td id="overseasIncome2">$0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="font-size: 14px; font-family: 'Fira Sans Condensed', sans-serif;"  id="resultTable9">
+                                    <thead class="text-white bg-green">
+                                    <tr>
+                                        <th width="50%">Companies or Trusts</th>
+                                        <th>Client</th>
+                                        <th>Partner</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Net Assets</td>
+                                        <td id="netAssets1">$0</td>
+                                        <td id="netAssets2">$0</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Net Profits</td>
+                                        <td id="netProfit1">$0</td>
+                                        <td id="netProfit2">$0</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-justify d-hidden">
+                                    Deeming is the term which describes the method used by Centrelink and Veteran’s Affairs to
+                                    calculate your assessable income from certain investments when determining the level of
+                                    entitlement to be paid.
+                                </p>
+                            </div>
+                        </div>
+                        <!--                        green-->
+                        <div class="greenbar" style="border: 1px solid #36b446;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+    <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-backdrop="static" data-keyboard="false" id="staticBackdrop" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Please Enter Your Details</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal" onclick="cancelModal()" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="name">
+                                First Name
+                            </label>
+                            <input class="form-control" id="name" name="firstName" required type="text" />
+                            <label for="name">
+                                Last Name
+                            </label>
+                            <input class="form-control" id="lastName" name="lastName" required type="text" />
+                            <label for="email">
+                                Email Address
+                            </label>
+                            <input class="form-control" id="email" name="email" required type="email" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal" onclick="cancelModal()" type="button">Close</button>
+                    <button class="btn btn-success" id="emailSubmit" onclick="getPDF()" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" rel="stylesheet" />
+<script crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- <script
+        crossorigin="anonymous"
+        integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
+        referrerpolicy="no-referrer"
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
+></script> -->
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+
+<!-- <script src="../iframeResizer.contentWindow.min.js"></script> -->
+<script src="./PDF.js"></script>
+<script src="./logic.js"></script>
+
+</body>
+</html>

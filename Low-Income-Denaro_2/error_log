@@ -1,0 +1,36 @@
+[27-Jan-2023 12:39:28 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 10
+[27-Jan-2023 12:39:28 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 34
+[27-Jan-2023 12:39:28 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 41
+[27-Jan-2023 12:39:28 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 69
+[27-Jan-2023 12:39:28 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 72
+[27-Jan-2023 12:39:28 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 86
+[27-Jan-2023 12:39:28 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 88
+[27-Jan-2023 13:02:21 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 10
+[27-Jan-2023 13:02:21 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 34
+[27-Jan-2023 13:02:21 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 41
+[27-Jan-2023 13:02:21 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 69
+[27-Jan-2023 13:02:21 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 72
+[27-Jan-2023 13:02:21 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 86
+[27-Jan-2023 13:02:21 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 88
+[27-Jan-2023 13:14:09 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 10
+[27-Jan-2023 13:14:09 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 34
+[27-Jan-2023 13:14:09 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 41
+[27-Jan-2023 13:14:09 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 69
+[27-Jan-2023 13:14:09 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 72
+[27-Jan-2023 13:14:09 UTC] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 86
+[27-Jan-2023 13:14:09 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/q7djkxyqp6j3/public_html/v2/Low-Income-Denaro/dataFetch.php on line 88
+[11-Mar-2023 12:05:29 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/v2/Low-Income-Denaro/mailchimp.php on line 19
+[11-Mar-2023 12:05:29 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/v2/Low-Income-Denaro/mailchimp.php on line 20
+[11-Mar-2023 12:13:54 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/v2/Low-Income-Denaro/mailchimp.php on line 19
+[11-Mar-2023 12:13:54 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/v2/Low-Income-Denaro/mailchimp.php on line 20
+[13-Mar-2023 01:19:04 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/v2/Low-Income-Denaro/mailchimp.php on line 19
+[13-Mar-2023 01:19:04 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/v2/Low-Income-Denaro/mailchimp.php on line 20
+[14-Mar-2023 12:31:15 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/v2/Low-Income-Denaro/mailchimp.php on line 19
+[14-Mar-2023 12:31:15 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/v2/Low-Income-Denaro/mailchimp.php on line 20
+[14-Mar-2023 14:28:51 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/mailchimp.php on line 19
+[14-Mar-2023 14:28:51 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/mailchimp.php on line 20
+[14-Mar-2023 15:32:32 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/mailchimp.php on line 19
+[14-Mar-2023 15:32:32 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/mailchimp.php on line 20
+[15-Mar-2023 11:23:16 UTC] PHP Warning:  Undefined array key "calName" in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/mailchimp.php on line 20
+[15-Mar-2023 11:28:21 UTC] PHP Warning:  Undefined array key "calName" in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/mailchimp.php on line 20
+[16-Mar-2023 14:29:43 UTC] PHP Warning:  Undefined array key "lastName" in /home/denaxvft/calculators.denarolink.com.au/test/Low-Income-Denaro/mailchimp.php on line 20
