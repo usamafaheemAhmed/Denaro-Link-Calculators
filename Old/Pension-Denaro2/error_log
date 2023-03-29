@@ -1,0 +1,93 @@
+[27-Jan-2023 12:39:18 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 3
+[27-Jan-2023 12:54:21 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 3
+[27-Jan-2023 12:55:46 UTC] PHP Warning:  require(../vendor/autoload.php): failed to open stream: No such file or directory in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/mail.php on line 9
+[27-Jan-2023 12:55:46 UTC] PHP Fatal error:  require(): Failed opening required '../vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/mail.php on line 9
+[27-Jan-2023 12:56:22 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 3
+[30-Jan-2023 09:59:17 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 3
+[30-Jan-2023 13:20:11 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 40
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 40
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 42
+[30-Jan-2023 13:20:11 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 54
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 54
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 56
+[30-Jan-2023 13:20:11 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 67
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 67
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 69
+[30-Jan-2023 13:20:11 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 76
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 76
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 78
+[30-Jan-2023 13:20:11 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 96
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 96
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 98
+[30-Jan-2023 13:20:11 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 112
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 112
+[30-Jan-2023 13:20:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 114
+[30-Jan-2023 13:20:46 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 40
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 40
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 42
+[30-Jan-2023 13:20:46 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 54
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 54
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 56
+[30-Jan-2023 13:20:46 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 67
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 67
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 69
+[30-Jan-2023 13:20:46 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 76
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 76
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 78
+[30-Jan-2023 13:20:46 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 96
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 96
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 98
+[30-Jan-2023 13:20:46 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 112
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 112
+[30-Jan-2023 13:20:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 114
+[30-Jan-2023 13:24:41 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 40
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 40
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 42
+[30-Jan-2023 13:24:41 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 54
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 54
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 56
+[30-Jan-2023 13:24:41 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 67
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 67
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 69
+[30-Jan-2023 13:24:41 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 76
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 76
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 78
+[30-Jan-2023 13:24:41 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 96
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 96
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 98
+[30-Jan-2023 13:24:41 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 112
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 112
+[30-Jan-2023 13:24:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 114
+[30-Jan-2023 13:25:57 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 40
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 40
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 42
+[30-Jan-2023 13:25:57 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 54
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 54
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 56
+[30-Jan-2023 13:25:57 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 67
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 67
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 69
+[30-Jan-2023 13:25:57 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 76
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 76
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 78
+[30-Jan-2023 13:25:57 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 96
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 96
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 98
+[30-Jan-2023 13:25:57 UTC] PHP Notice:  Undefined variable: mysqli in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 112
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 112
+[30-Jan-2023 13:25:57 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/q7djkxyqp6j3/public_html/v2/Pension-Denaro/get.php on line 114
+[11-Mar-2023 11:48:41 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/v2/Pension-Denaro/mailchimp.php on line 19
+[11-Mar-2023 11:48:41 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/v2/Pension-Denaro/mailchimp.php on line 20
+[11-Mar-2023 11:54:05 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/v2/Pension-Denaro/mailchimp.php on line 19
+[11-Mar-2023 11:54:05 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/v2/Pension-Denaro/mailchimp.php on line 20
+[11-Mar-2023 11:56:26 UTC] PHP Warning:  Undefined array key "lName" in /home/denaxvft/calculators.denarolink.com.au/v2/Pension-Denaro/mailchimp.php on line 19
+[11-Mar-2023 11:56:26 UTC] PHP Warning:  Undefined array key "fName" in /home/denaxvft/calculators.denarolink.com.au/v2/Pension-Denaro/mailchimp.php on line 20
+[14-Mar-2023 13:32:41 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/denaxvft/calculators.denarolink.com.au/test/Pension-Denaro/get.php on line 11
+[14-Mar-2023 13:32:41 UTC] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home/denaxvft/calculators.denarolink.com.au/test/Pension-Denaro/get.php:42
+Stack trace:
+#0 /home/denaxvft/calculators.denarolink.com.au/test/Pension-Denaro/get.php(42): mysqli_query()
+#1 {main}
+  thrown in /home/denaxvft/calculators.denarolink.com.au/test/Pension-Denaro/get.php on line 42
+[15-Mar-2023 10:54:18 UTC] PHP Warning:  Undefined array key "calName" in /home/denaxvft/calculators.denarolink.com.au/test/Pension-Denaro/mailchimp.php on line 20
+[23-Mar-2023 11:32:08 UTC] PHP Warning:  Undefined variable $pdfData in /home/denaxvft/calculators.denarolink.com.au/test2/Pension-Denaro/mail.php on line 30
+[23-Mar-2023 20:09:26 UTC] PHP Warning:  Undefined variable $pdfData in /home/denaxvft/calculators.denarolink.com.au/test2/Pension-Denaro@2/mail.php on line 30

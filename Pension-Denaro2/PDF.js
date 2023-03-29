@@ -73,8 +73,10 @@
     doc.setTextColor(46, 62, 63);
     doc.setFontSize(12); 
     doc.setFontStyle('bold');
-    doc.text(60, 100,'Your estimated Age Pension entitlements is $0 per fortnight based upon your scenario.');
-    doc.text(110, 120,'This will provide you with an annual amount of $0 from Centrelink.');
+    let fortnight = document.getElementById("fortnight").innerHTML;
+    doc.text(60, 100,'Your estimated Age Pension entitlements is '+fortnight+' per fortnight based upon your scenario.');
+    let fortnightAnnual = document.getElementById("fortnightAnnual").innerHTML;
+    doc.text(110, 120,'This will provide you with an annual amount of '+fortnightAnnual+' from Centrelink.');
 
 
     // let img = new Image()
@@ -773,29 +775,42 @@
         //put resulting values of calculator here start
         doc.setFontSize(12);
         doc.setFontStyle('bold');
+        
+        
+        
         // left
-        doc.text(185, 170,'No',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
+        let isHomeOwner2 = document.getElementById("isHomeOwner2").innerHTML;
+        doc.text(185, 170,isHomeOwner2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
         
-        doc.text(175, 300,'$0',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
+        let ALower2 = document.getElementById("ALower2").innerHTML;
+        doc.text(175, 300,ALower2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
         
-        doc.text(175, 410,'$0',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
+        let AHigher2 = document.getElementById("AHigher2").innerHTML;
+        doc.text(175, 410,AHigher2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
         
-        doc.text(175, 520,'$0',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
+        let AAssessable2 = document.getElementById("AAssessable2").innerHTML;
+        doc.text(175, 520,AAssessable2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
         
-        doc.text(175, 630,'$0',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
-
-
-
+        let AExcess2 = document.getElementById("AExcess2").innerHTML;
+        doc.text(175, 630,AExcess2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
+        
+        
+        
         // right
-        doc.text(385, 170,'Single',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
+        let relationship2 = document.getElementById("relationship2").innerHTML;
+        doc.text(385, 170,relationship2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
         
-        doc.text(390, 300,'$0',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
+        let ILower2 = document.getElementById("ILower2").innerHTML;
+        doc.text(390, 300,ILower2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
         
-        doc.text(390, 410,'$0',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
+        let IHigher2 = document.getElementById("IHigher2").innerHTML;
+        doc.text(390, 410,IHigher2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
         
-        doc.text(390, 520,'$0',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
+        let IAssessable2 = document.getElementById("IAssessable2").innerHTML;
+        doc.text(390, 520,IAssessable2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
         
-        doc.text(390, 630,'$0',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
+        let IExcess2 = document.getElementById("IExcess2").innerHTML;
+        doc.text(390, 630,IExcess2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}); 
         
         //put resulting values of calculator here end
 

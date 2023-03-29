@@ -77,11 +77,14 @@ function PDFFile3(){
 
       doc.text(307, 280,'The Commonwealth Seniors Health Care Card is available to individuals who reach Commonwealth Seniors Health Care Card age but do not qualify for the Commonwealth Seniors Health Care Card or other Social Security or Veteran Affairs pensions or benefits.',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'center'});
       
+      
+      var width = doc.internal.pageSize.getWidth();
+      
       let totalIncomePDF  = document.getElementById("totalIncome").innerHTML;
-      doc.text(290, 195,totalIncomePDF);
+      doc.text(width/2, 195,totalIncomePDF, { align: 'center'});
       
       let thresholdPDF  = document.getElementById("threshold").innerHTML;
-      doc.text(290, 245,thresholdPDF);
+      doc.text(width/2, 245,thresholdPDF, { align: 'center'});
       
 
       

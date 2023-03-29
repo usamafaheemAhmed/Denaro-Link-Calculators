@@ -80,11 +80,14 @@ function PDFFile2(){
       let incomeThreshold1PDF = document.getElementById("incomeThreshold1").innerHTML;
       let incomeOverORUnder1d1PDF = document.getElementById("incomeOverORUnder1").innerHTML;
 
-      doc.text(290, 185,totalIncome1PDF);
+    //   console.log(totalIncome1PDF.length+" "+incomeThreshold1PDF.length+" "+incomeOverORUnder1d1PDF.length)
+
+      var width = doc.internal.pageSize.getWidth()
+      doc.text(width/2, 185,totalIncome1PDF, { align: 'center'});
       
-      doc.text(290, 235,incomeThreshold1PDF);
+      doc.text(width/2, 235,incomeThreshold1PDF, { align: 'center'});
       
-      doc.text(290, 290,incomeOverORUnder1d1PDF);
+      doc.text(width/2, 290,incomeOverORUnder1d1PDF, { align: 'center'});
 
       
       doc.setTextColor(101, 101, 101);

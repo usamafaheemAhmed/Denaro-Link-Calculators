@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="./FIRETHEBOSS_ICON_A.png" type="image/gif" >
+  <!-- Bootstrap CSS -->
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+  <title>THE FTB EARLY RETIREMENT CALCULATOR</title>
+  <style>
+
+
+    body {
+
+
+    }
+    /*@media only screen and (max-width: 600px) {*/
+    /*    canvas {*/
+    /*        max-height: 400px;*/
+    /*    }*/
+    /*}*/
+
+    .form-control{
+      border-radius: 0;
+    }
+    .form-control:focus{
+      border-radius: 0;
+      border: 1px solid #000000;
+      box-shadow: 3px 3px 3px #1C154A;
+    }
+    .bold{
+      font-weight: bold;
+    }
+
+    strong{
+
+      color: #d9644d;
+    }
+    h1,label{
+      color: #1C154A;
+    }
+    a.canvasjs-chart-credit{
+      display: none !important;
+    }
+    .form-control-range,.form-control{
+      max-width: 100%;
+    }
+    #chartContainer{
+      height: 400px; width: 100%;
+    }
+    label{
+      margin-top: 10px;
+    }
+
+    @media all and (max-width: 1024px) {
+      #chartContainer{
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<main class="container" >
+  <h1 class="text-center mt-4 mb-2" style="color: #1C154A" >
+    THE FTB EARLY <span style="color: #d9644d">RETIREMENT</span> CALCULATOR
+  </h1>
+
+
+  <div class="row g-3 mb-4">
+    <div class="col-md-4">
+      <label for="yearlyNetIncomeInput" class="form-label">Yearly Net Income($)</label>
+      <input type="text" class="form-control mb-2" value="35,000" id="yearlyNetIncomeInput">
+      <input type="range" class="form-control-range" value="35000"  min="0" max="150000" id="yearlyNetIncomeRange">
+    </div>
+    <div class="col-md-4">
+      <label for="currentInvestmentsInput" class="form-label">Current Investments($)</label>
+      <input type="text" class="form-control mb-2" value="50,000" id="currentInvestmentsInput">
+      <input type="range" class="form-control-range" value="50000" min="0" max="250000" id="currentInvestmentsRange">
+    </div>
+    <div class="col-md-4">
+      <label for="yourCurrentAgeInput" class="form-label"> Current Age</label>
+      <input type="text" class="form-control mb-2" value="26" id="yourCurrentAgeInput">
+      <input type="range" class="form-control-range" value="26" min="15" max="85" id="yourCurrentAgeRange">
+    </div>
+    <div class="col-md-4">
+      <label for="yearlySpendingInput" class="form-label">Yearly Spending($)</label>
+      <input type="text" class="form-control mb-2" value="20,000" id="yearlySpendingInput">
+      <input type="range" class="form-control-range" value="20000" min="0" max="150000" id="yearlySpendingRange">
+    </div>
+    <div class="col-md-4">
+      <label for="expectedReturnInput" class="form-label">Expected Return(%)</label>
+      <input type="text" class="form-control mb-2" value="7.0" id="expectedReturnInput">
+      <input type="range" class="form-control-range" value="7.0" min="0.0" max="14.5" step="0.5" id="expectedReturnRange">
+    </div>
+    <div class="col-md-4">
+      <label for="withdrawalRateInput" class="form-label">Withdrawal Rate(%)</label>
+      <input type="text" class="form-control mb-2" value="3.5" id="withdrawalRateInput">
+      <input type="range" class="form-control-range" value="3.5" min="0.0" max="9.9" step="0.1" id="withdrawalRateRange">
+    </div>
+  </div>
+  <div id="resultDiv">
+    <h1 class="text-center mt-4 mb-4 bold" id="logoPrint" style="display: none">
+      <img src="https://firetheboss.com/wp-content/uploads/2021/11/FIRETHEBOSS_HORIZ_A.png" alt="logo" width="30%" height="auto">
+    </h1>
+    <div class="text-center">
+      <p class="saving"></p>
+      <p class="retire"></p>
+      <p class="compounding"></p>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-12 chart">
+
+
+        <div id="chart"></div>
+        <br>
+      </div>
+      <div class="col-md-12">
+        <p data-toggle="modal" data-target="#emailModal1" class="text-center mt-5" style="cursor: pointer;color: #d9644d;font-weight: bold" id="PDF">Get The Result In A PDF</p>
+      </div>
+
+    </div>
+
+    <h1 class="text-center mt-4 mb-4 bold" id="logo2">
+      <img src="https://firetheboss.com/wp-content/uploads/2021/11/FIRETHEBOSS_HORIZ_A.png" alt="logo" width="30%" height="auto">
+    </h1>
+  </div>
+</main>
+<div class="modal fade" id="emailModal1"
+     tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Please Enter Your Details
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <label for="nameClient">
+              Name
+            </label>
+            <input type="text" name="nameClient" id="nameClient" class="form-control" required>
+            <label for="emailClient">
+              Email Address
+            </label>
+            <input type="email" name="emailClient" id="emailClient" class="form-control" required>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" id="emailSubmit"
+                data-dismiss="modal">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script crossorigin="anonymous"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="text/javascript">
+
+  let netIncome = 35000;
+  let investments = 50000;
+  let currentAge = 26;
+  let spending = 20000;
+  let expectedReturn = 7.0;
+  let withdrawalRate = 3.5;
+  let retireAmount = 0;
+  let saving = document.querySelector('.saving')
+  let retire = document.querySelector('.retire')
+  let compounding = document.querySelector('.compounding')
+
+  const yearlyNetIncomeInput = document.getElementById('yearlyNetIncomeInput')
+  const emailSubmit = document.getElementById('emailSubmit')
+  const yearlyNetIncomeRange = document.getElementById('yearlyNetIncomeRange')
+
+  const currentInvestmentsInput = document.getElementById('currentInvestmentsInput')
+  const currentInvestmentsRange = document.getElementById('currentInvestmentsRange')
+
+  const yourCurrentAgeInput = document.getElementById('yourCurrentAgeInput')
+  const yourCurrentAgeRange = document.getElementById('yourCurrentAgeRange')
+
+  const yearlySpendingInput = document.getElementById('yearlySpendingInput')
+  const yearlySpendingRange = document.getElementById('yearlySpendingRange')
+
+  const expectedReturnInput = document.getElementById('expectedReturnInput')
+  const expectedReturnRange = document.getElementById('expectedReturnRange')
+
+  const withdrawalRateInput = document.getElementById('withdrawalRateInput')
+  const withdrawalRateRange = document.getElementById('withdrawalRateRange')
+
+  emailSubmit.addEventListener('click',sendPDF);
+
+  function numberWithCommas(x) {
+    // x = parseFloat(x).toFixed(2)
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+  }
+  function numberWithOutCommas(x) {
+    return Number(x.replace(/[^0-9\.-]+/g,""));
+  }
+  const calcSaving = (income, spending) => {
+    saving.innerHTML = `With your income of <strong> ${numberWithCommas(income)} </strong> and spending of <strong> ${numberWithCommas(spending)} </strong> you can save <strong> ${numberWithCommas(income - spending)} </strong> per year <br> <strong> (${parseFloat(((income - spending)/income)*100).toFixed(1)}% </strong>).`
+  }
+  calcSaving(netIncome, spending);
+
+  const calcRetire = (spending, withdrawalRate) => {
+    retireAmount = numberWithOutCommas(parseFloat((spending / withdrawalRate)*100).toFixed(0))
+    retire.innerHTML = `With your yearly spending of <strong> ${numberWithCommas(spending)} </strong> and a desired withdrawal rate of <strong> ${withdrawalRate}% </strong> you <br> need at least <strong> ${numberWithCommas(retireAmount)} </strong> to retire early. `
+  }
+  calcRetire(spending, withdrawalRate);
+
+  const calcCompounding = (income, investments, spending, expectedReturn, currentAge, withdrawalRate) => {
+    let intrest = 0
+    let date = new Date().getFullYear();
+    let dateArr = [date];
+    intrest = (investments + ((expectedReturn / 100) *investments)) + (income - spending);
+    date+= 1;
+    let futureValueArr = [intrest];
+    dateArr.push(date);
+    currentAge+= 1
+    let futureValue = 0;
+    let futureAge = 0
+    let futureDate = 0
+    for (let index = 0; index < 40; index++) {
+      if(intrest <=  retireAmount) {
+        intrest +=  ((expectedReturn / 100) * intrest) + (income - spending);
+        futureValueArr.push(intrest);
+        date+= 1;
+        dateArr.push(date);
+        currentAge+= 1;
+        futureValue = intrest;
+        futureAge = currentAge;
+        futureDate = date;
+      }else {
+        futureDate += 1;
+        dateArr.push(futureDate);
+        futureValue +=  (((expectedReturn - withdrawalRate) / 100) * futureValue) + (income - spending);
+        futureValueArr.push(futureValue);
+        if((futureValue/1000000).toFixed(1) <= 1){
+          futureAge += 1;
+        }
+      }
+    }
+    compounding.innerHTML = `With a starting balance of <strong> ${numberWithCommas(investments)} </strong> and yearly investments <strong> ${numberWithCommas(income - spending)} </strong> you will exceed <br> your goal in <strong> ${date} </strong> at age <strong>${currentAge}</strong> given your expected rate of return of <strong>${expectedReturn}%</strong>. <br> ${(futureValue/1000000).toFixed(1) >= 1 ? `If you keep working, at your current pace you'll become a millionaire by age <strong> ${futureAge}. </strong>`:"Sorry you won't be able to become a millionaire " }  `
+    createChart(dateArr, retireAmount, futureValueArr);
+  }
+  calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+
+
+
+  yearlyNetIncomeRange.addEventListener('input', (e) => {
+    netIncome = Number(e.target.value);
+    yearlyNetIncomeInput.value = numberWithCommas(netIncome);
+    calcSaving(netIncome, spending);
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  currentInvestmentsRange.addEventListener('input', (e) => {
+    investments = Number(e.target.value);
+    currentInvestmentsInput.value = numberWithCommas(investments);
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  yourCurrentAgeRange.addEventListener('input', (e) => {
+    currentAge = Number(e.target.value);
+    yourCurrentAgeInput.value = currentAge;
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  yearlySpendingRange.addEventListener('input', (e) => {
+    spending = Number(e.target.value);
+    calcSaving(netIncome, spending);
+    calcRetire(spending, withdrawalRate);
+    yearlySpendingInput.value = numberWithCommas(spending);
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  expectedReturnRange.addEventListener('input', (e) => {
+    expectedReturn = e.target.value;
+    expectedReturnInput.value = expectedReturn;
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  withdrawalRateRange.addEventListener('input', (e) => {
+    withdrawalRate = e.target.value;
+    calcRetire(spending, withdrawalRate);
+    withdrawalRateInput.value = withdrawalRate;
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+
+
+  yearlyNetIncomeInput.addEventListener('change', (e) => {
+    netIncome = numberWithOutCommas(e.target.value);
+    yearlyNetIncomeRange.value = netIncome;
+    yearlyNetIncomeInput.value = numberWithCommas(netIncome);
+    calcSaving(netIncome, spending);
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  });
+  currentInvestmentsInput.addEventListener('change', (e) => {
+    investments = numberWithOutCommas(e.target.value);
+    currentInvestmentsRange.value = investments;
+    currentInvestmentsInput.value = numberWithCommas(investments);
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  yourCurrentAgeInput.addEventListener('change', (e) => {
+    currentAge = numberWithOutCommas(e.target.value);
+    yourCurrentAgeRange.value = currentAge;
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  yearlySpendingInput.addEventListener('change', (e) => {
+    spending = numberWithOutCommas(e.target.value);
+    yearlySpendingRange.value = spending;
+    yearlySpendingInput.value = numberWithCommas(spending);
+    calcSaving(netIncome, spending);
+    calcRetire(spending, withdrawalRate);
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  expectedReturnInput.addEventListener('change', (e) => {
+    expectedReturn = e.target.value;
+    expectedReturnRange.value = expectedReturn;
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+  withdrawalRateInput.addEventListener('change', (e) => {
+    withdrawalRate = e.target.value;
+    withdrawalRateRange.value = withdrawalRate;
+    calcRetire(spending, withdrawalRate);
+    calcCompounding(netIncome, investments, spending, expectedReturn, currentAge, withdrawalRate);
+  })
+
+
+  function createChart(dateArr, retireAmount, futureValueArr) {
+    document.querySelector(".chart").innerHTML = `<div id="chart"></div>`
+    let retireAmountArr =  dateArr.map(() => {
+      return retireAmount;
+    });
+
+    var options = {
+
+      colors: ['#1C154A','#F08080'],
+
+      series: [{
+        name: "Future Value",
+        data: [...futureValueArr],
+
+
+      },
+        {
+          name: "Retirement Value",
+          data: [...retireAmountArr]
+        }
+      ],
+
+      chart: {
+        height: 350,
+        type: 'line',
+        zoom: {
+          enabled: false
+        },
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        width: [3, 3, 3],
+        curve: 'straight',
+        dashArray: [0, 8, 5],
+        color: '#000000'
+      },
+      markers: {
+        size: 0,
+        hover: {
+          sizeOffset: 6
+        }
+      },
+      xaxis: {
+        categories: [...dateArr],
+        tickAmount: 6,
+      },
+
+      grid: {
+        borderColor: '#f1f1f1',
+      },
+      yaxis: {
+        labels: {
+          formatter: function (x) {
+            return "$" + x.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          }
+        },
+      }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    chart.render();
+
+
+  }
+  function sendPDF(){
+
+    let emailClient = $("#emailClient").val();
+    let nameClient = $("#nameClient").val();
+
+    if (emailClient === "" || nameClient === "" ){
+      Swal.fire(
+              'Error!',
+              'Please fill both inputs correctly!',
+              'error'
+      )
+      return false;
+    }
+    $("#logoPrint").show();
+    $("#PDF").hide();
+    $("#logo2").hide();
+
+    Swal.fire(
+            'Sending!',
+            'Please wait for few seconds!',
+            'success'
+    )
+    setInterval(hidecontent,3000);
+
+
+    let element = document.getElementById('resultDiv');
+    let opt = { pagebreak: {mode: 'avoid-all'},margin: [20,5,0,5], filename: 'FTB-EarlyRetirement-Assessment.pdf',image: { type: 'jpeg', quality: 0.80 }, html2canvas:  { scale: 3 }, jsPDF: { unit: 'px', format: [1200,1200], orientation: 'portrait' }};
+
+    html2pdf().set(opt).from(element).toPdf().output('datauristring').then(function (pdfAsString) {
+
+      let datastring = {
+        'fileDataURI': pdfAsString,
+        'email' : emailClient,
+        'name' : nameClient,
+      };
+      $.ajax({
+        type: "POST",
+        url: "https://firetheboss.com/calculator/mail-new.php",
+        data: datastring,
+        success: function(data) {
+          console.log(data);
+          Swal.fire(
+                  'Success',
+                  'Message has been sent! Don\'t forget to check your spam folder!',
+                  'success'
+          );
+        }
+      });
+
+      console.log( data );
+    } );
+
+
+  }
+
+  function hidecontent(){
+    $("#logoPrint").hide();
+    $("#PDF").show();
+    $("#logo2").show();
+  }
+
+</script>
+</body>
+</html>

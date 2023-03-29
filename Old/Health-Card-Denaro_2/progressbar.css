@@ -1,0 +1,183 @@
+
+.form-card {
+    text-align: left;
+}
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+/*Icon progressbar*/
+#progressbar,#progressbar2 {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+}
+
+#progressbar .active1,#progressbar2 .active1 {
+    color: #36B446;
+}
+
+#progressbar li,#progressbar2 li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 15%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+}
+
+/*Icons in the ProgressBar*/
+#progressbar #home:before,#progressbar #properties:before {
+    font-family: FontAwesome;
+    content: "\f015";
+}
+
+
+#progressbar2 #lifetimeIncome:before {
+    font-family: FontAwesome;
+    content: "\f2c2";
+}
+
+#progressbar2 #companiesIncome:before {
+    font-family: FontAwesome;
+    content: "\f1ad";
+}
+
+#progressbar #workingIncome:before,#progressbar #otherIncome:before {
+    font-family: FontAwesome;
+    content: "\f0b1";
+}
+
+
+#progressbar2 #result:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+}
+
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007";
+}
+
+#progressbar #lifestyle:before {
+    font-family: FontAwesome;
+    content: "\f084";
+}
+
+#progressbar #investment:before,#progressbar2 #pension:before,#progressbar #investment2:before  {
+    font-family: FontAwesome;
+    content: "\f0d6";
+}
+
+/*Icon ProgressBar before any progress*/
+#progressbar li:before,#progressbar2 li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+}
+
+/*ProgressBar connectors*/
+#progressbar li:after,#progressbar2 li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1;
+}
+
+/*Color number of the step and the connector before it*/
+#progressbar li.active1:before, #progressbar li.active1:after,#progressbar2 li.active1:before, #progressbar2 li.active1:after {
+    background: #36B446;
+}
+
+/*Animated Progress Bar*/
+.progress {
+    height: 20px;
+}
+
+.progress-bar {
+    background-color: #36B446;
+    /*color: #36B446;*/
+}
+/*Fit image in bootstrap div*/
+.fit-image{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@media all and (max-width: 480px){
+
+   #progressbar li,#progressbar2 li {
+        list-style-type: none;
+        font-size: 5px;
+        width: 15%;
+        float: left;
+        position: relative;
+        font-weight: 400;
+    }
+
+    #progressbar li:before,#progressbar2 li:before {
+        width: 20px;
+        height: 20px;
+        line-height: 16px;
+        display: block;
+        font-size: 9px;
+        color: #ffffff;
+        background: lightgray;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+        padding: 2px;
+    }
+    #progressbarDiv{
+        width: 380px; 
+        margin-left: -60px;
+    }
+    #msform{
+        padding-left: 8px;
+        width: 400px;
+        margin-left: -50px;
+        margin-bottom: 0px !important;
+    }
+    #progressbar{
+        margin-bottom: 0px;
+        width: 410px;
+    }
+}
+
+
+
+
+/*@media  all and (max-width: 768px) {*/
+
+/*    #progressbar li:before,#progressbar2 li:before {*/
+/*        width: 30px;*/
+/*        height: 29px;*/
+/*        line-height: 25px;*/
+/*        display: block;*/
+/*        font-size: 15px;*/
+/*        color: #ffffff;*/
+/*        background: lightgray;*/
+/*        border-radius: 50%;*/
+/*        margin: 10px auto 10px auto;*/
+/*        padding: 2px;*/
+/*    }*/
+/*    #progressbar li strong,#progressbar2 li strong {*/
+/*        font-size: 7px;*/
+
+/*    }*/
+    
+/*}*/
