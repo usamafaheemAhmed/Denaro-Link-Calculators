@@ -80,41 +80,11 @@ function PDFFile2(){
       let incomeThreshold1PDF = document.getElementById("incomeThreshold1").innerHTML;
       let incomeOverORUnder1d1PDF = document.getElementById("incomeOverORUnder1").innerHTML;
 
-      console.log(totalIncome1PDF.length+" "+incomeThreshold1PDF.length+" "+incomeOverORUnder1d1PDF.length)
-
-      let y = 290;
-        doc.text(350, 185,totalIncome1PDF+""+incomeThreshold1PDF+""+incomeOverORUnder1d1PDF,{maxWidth: 100, lineHeightFactor: 3.5, align: 'center'});
-
-      // if(totalIncome1PDF.length>incomeThreshold1PDF.length && totalIncome1PDF.length>incomeOverORUnder1d1PDF.length){
-      //   doc.text(y-20, 185,totalIncome1PDF);
+      doc.text(290, 185,totalIncome1PDF);
       
-      //   doc.text(y, 235,incomeThreshold1PDF);
-        
-      //   doc.text(y, 290,incomeOverORUnder1d1PDF);
-      // }
-      // else if (incomeThreshold1PDF.length>totalIncome1PDF.length && incomeThreshold1PDF.length>incomeOverORUnder1d1PDF.length){
-      //   doc.text(y, 185,totalIncome1PDF);
+      doc.text(290, 235,incomeThreshold1PDF);
       
-      //   doc.text(y-20, 235,incomeThreshold1PDF);
-        
-      //   doc.text(y, 290,incomeOverORUnder1d1PDF);
-      // }
-      // else {
-      //   console.log(y+(((incomeOverORUnder1d1PDF.length-incomeThreshold1PDF.length)/2)*10));
-      //   doc.text(y, 185,totalIncome1PDF);
-        
-      //   console.log(y+(((incomeOverORUnder1d1PDF.length-totalIncome1PDF.length)/2)*10));
-      //   doc.text(y, 235,incomeThreshold1PDF);
-        
-      //   doc.text(y, 290,incomeOverORUnder1d1PDF);
-      // }
-
-
-      // doc.text(y, 185,totalIncome1PDF);
-      
-      // doc.text(y, 235,incomeThreshold1PDF);
-      
-      // doc.text(y, 290,incomeOverORUnder1d1PDF);
+      doc.text(290, 290,incomeOverORUnder1d1PDF);
 
       
       doc.setTextColor(101, 101, 101);
@@ -647,13 +617,13 @@ function PDFFile2(){
       
   
   
-         doc.save('Your_Estimated_Quote.pdf');
+        //  doc.save('Your_Estimated_Quote.pdf');
   
     
-    //   var pdfData = doc.output('datauristring'); 
-    //   // console.log(pdfData);
-    //   // return pdfData;
-    //  return(pdfData);
+      var pdfData = doc.output('datauristring'); 
+      // console.log(pdfData);
+      // return pdfData;
+     return(pdfData);
       
   }
   

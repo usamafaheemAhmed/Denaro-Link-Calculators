@@ -765,10 +765,23 @@ function emailSending(){
 
       $("#result").addClass("active1");
     
-    if (!nameClient || !emailClient) {
-        alert("Please fill name and email correctly.");
-        return false;
+
+  if (!nameClient || !emailClient) {
+ 
+    alert("Please fill name and email correctly.");
+    document.getElementById("emailSubmit").innerHTML= "Send";
+    return false;
+  }
+  else{
+    let validateEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(emailClient.match(validateEmail)){
+
+    }else{
+      alert("Please Enter Valid Email");
+      document.getElementById("emailSubmit").innerHTML= "Send";
+      return false;
     }
+  }
     step(11);
     $("#PDF-content").hide();
     getResults();
@@ -839,7 +852,7 @@ function emailSending(){
                         $("#buttons").show();
                         $("#PDF-content").hide();
                         $(".title").hide();
-                        // document.getElementById("emailSubmit").innerHTML= "Send";
+                        document.getElementById("emailSubmit").innerHTML= "Send";
                     },
                     error: function (error) {
                         console.log("Error");
@@ -850,6 +863,7 @@ function emailSending(){
                         $("#buttons").show();
                         $("#PDF-content").hide();
                         $(".title").hide();
+                        document.getElementById("emailSubmit").innerHTML= "Send";
                     },
                 });
 

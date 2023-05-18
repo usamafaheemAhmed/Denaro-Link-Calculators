@@ -468,10 +468,23 @@ function SendPDF() {
     let lastName = document.getElementById("lastName").value;
     let emailClient = document.getElementById("email").value;
 
-    if (!nameClient || !emailClient) {
+
+      if (!nameClient || !emailClient) {
+     
         alert("Please fill name and email correctly.");
+        document.getElementById("emailSubmit").innerHTML= "Send";
         return false;
-    }
+      }
+      else{
+        let validateEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        if(emailClient.match(validateEmail)){
+    
+        }else{
+          alert("Please Enter Valid Email");
+          document.getElementById("emailSubmit").innerHTML= "Send";
+          return false;
+        }
+      }
     $("html, body").animate(
         {
             scrollTop: $("#loaderDiv").show().offset().top,
@@ -549,6 +562,7 @@ function SendPDF() {
                     $(".title").hide();
                     $(".hid").hide();
                     $(".d-hidden").hide();
+                    document.getElementById("emailSubmit").innerHTML= "Send";
                 },
             });
     

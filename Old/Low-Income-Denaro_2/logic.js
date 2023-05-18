@@ -542,7 +542,7 @@ function getIncome(status, hDOB, wDOB, deemedIncomeThold) {
     document.getElementById("incomeOverORUnder").innerHTML =
       toComma(incomeOverOrUnder);
     document.getElementById("incomeOverORUnder1").innerHTML =
-      toComma(-incomeOverOrUnder);
+      toComma(incomeOverOrUnder);
     if (incomeOverOrUnder > 0) {
       $(".verdict").text("You don’t meet the relevant income test");
 

@@ -690,9 +690,22 @@ function SendPDF(){
   let lastName = document.getElementById("lastName").value;
   let emailClient = document.getElementById("email").value;
 
+
   if (!nameClient || !emailClient) {
+ 
     alert("Please fill name and email correctly.");
+    document.getElementById("emailSubmit").innerHTML= "Send";
     return false;
+  }
+  else{
+    let validateEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(emailClient.match(validateEmail)){
+
+    }else{
+      alert("Please Enter Valid Email");
+      document.getElementById("emailSubmit").innerHTML= "Send";
+      return false;
+    }
   }
   $("html, body").animate(
     {
@@ -712,7 +725,7 @@ function SendPDF(){
       $(".title").hide();
       $("#optionalContent").hide();
       $(".results-main").show();
-      document.getElementById("loaderDiv").classList.remove("d-none");
+    //   document.getElementById("loaderDiv").classList.remove("d-none");
       document.getElementById("ResultsClass2").classList.add("d-none");
       document.getElementById("ResultsClass1").classList.add("d-none");
       document.getElementById("ResultsClass").classList.add("d-none");
@@ -759,7 +772,7 @@ function SendPDF(){
         success: function (data) {
           console.log(data);
           alert("Email Has Been Sent Successfully!");
-        //   $("#loaderDiv").hide();
+          $("#loaderDiv").hide();
           $("#progressbarDiv").show();
           $("#buttons").show();
           $("#frontPage").hide();
@@ -767,7 +780,8 @@ function SendPDF(){
           $(".title").hide();
           $("#optionalContent").hide();
           $(".results-main").show();
-          document.getElementById("loaderDiv").classList.add("d-none");
+          document.getElementById("emailSubmit").innerHTML= "Send";
+        //   document.getElementById("loaderDiv").classList.add("d-none");
           document.getElementById("ResultsClass2").classList.add("d-none");
           document.getElementById("ResultsClass1").classList.add("d-none");
           document.getElementById("ResultsClass").classList.add("d-none");
@@ -784,6 +798,7 @@ function SendPDF(){
           $("#optionalContent").hide();
           $(".results-main").show();
           $(".results").hide();
+          document.getElementById("emailSubmit").innerHTML= "Send";
       },
       });
 

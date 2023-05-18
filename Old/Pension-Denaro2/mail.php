@@ -30,7 +30,7 @@ require './vendor/autoload.php';
         // print_r($pdfData);
         
         
-        file_put_contents('./Age Pension Calculator Report.pdf', $pdfdoc);
+        file_put_contents('./Pension-Denaro.pdf', $pdfdoc);
   
         // die;
         $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Enable verbose debug output
@@ -49,7 +49,7 @@ require './vendor/autoload.php';
         $mail->addAddress($email, $name); // Add a recipient
         // $mail->addBCC('usamafaheem80#mail.com');
         $mail->addBCC('denarolink@denarowealth.com.au');
-        $mail->Subject = 'Age Pension Calculator Report';
+        $mail->Subject = 'Summary From Age Pension Calculator';
         $mail->Body = '
         <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -334,7 +334,7 @@ require './vendor/autoload.php';
         </html>
         ';
         // $mail->addStringAttachment($decoded_pdf, "Age-Pension-Summary.pdf");
-        $mail->AddEmbeddedImage('./Age Pension Calculator Report.pdf',"pdf");
+        $mail->AddEmbeddedImage('./Pension-Denaro.pdf',"pdf");
 
         $mail->send();
         echo 'Message has been sent';

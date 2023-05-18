@@ -49,6 +49,7 @@ require './vendor/autoload.php';
         $mail->addAddress($email, $name); // Add a recipient
         // $mail->addBCC('usamafaheem80#mail.com');
         $mail->addBCC('denarolink@denarowealth.com.au');
+        $mail->AddEmbeddedImage('./logo-1.png',"logo");
         $mail->Subject = 'Age Pension Calculator Report';
         $mail->Body = '
         <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -182,8 +183,8 @@ require './vendor/autoload.php';
             <tr>
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
-          <div style="font-family: "Raleway",sans-serif; line-height: 140%; text-align: left; word-wrap: break-word;">
-            <p style="line-height: 140%;">Thanks for completing the Denaro Link eligibility calculator. Please find attached a copy of your results.</p>
+          <div style="font-family: "Raleway",sans-serif; line-height: 140%; text-align: justify; word-wrap: break-word;">
+            <p style="line-height: 140%;text-align: justify;">Thanks for completing the Denaro Link eligibility calculator. Please find attached a copy of your results.</p>
           </div>
         
               </td>
@@ -196,8 +197,8 @@ require './vendor/autoload.php';
             <tr>
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
-          <div style="font-family: "Raleway",sans-serif; line-height: 140%; text-align: left; word-wrap: break-word;">
-            <p style="line-height: 140%;">We\'d love you to get in touch to discuss your results.<span style="color: #000000; line-height: 19.6px;"> <span style="line-height: 19.6px; color: #2dc26b;"><a rel="noopener" href="https://denarowealth.com.au/book-chat" target="_blank" style="color: #2dc26b;"><span style="text-decoration: underline; line-height: 19.6px;">Click here to organise a free, no-obligation 20-minute chat.</span></a></span></span></p>
+          <div style="font-family: "Raleway",sans-serif; line-height: 140%; text-align: justify; word-wrap: break-word;">
+            <p style="line-height: 140%; text-align: justify;">We\'d love you to get in touch to discuss your results.<span style="color: #000000; line-height: 19.6px;"> <span style="line-height: 19.6px; color: #2dc26b;"><a rel="noopener" href="https://denarowealth.com.au/book-chat" target="_blank" style="color: #2dc26b;"><span style="text-decoration: underline; line-height: 19.6px;">Click here to organise a free, no-obligation 20-minute chat.</span></a></span></span></p>
           </div>
         
               </td>
@@ -210,8 +211,8 @@ require './vendor/autoload.php';
             <tr>
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
-          <div style="font-family: "Raleway",sans-serif; line-height: 140%; text-align: left; word-wrap: break-word;">
-            <p style="line-height: 140%;">Eligibility rules for The Age Pension and concession cards can be complex, and you may be eligible for more than you realise. We want to help you get every dollar and discount you are entitled to.</p>
+          <div style="font-family: "Raleway",sans-serif; line-height: 140%; text-align: justify; word-wrap: break-word;">
+            <p style="line-height: 140%; text-align: justify;">Eligibility rules for The Age Pension and concession cards can be complex, and you may be eligible for more than you realise. We want to help you get every dollar and discount you are entitled to.</p>
           </div>
         
               </td>
@@ -224,11 +225,11 @@ require './vendor/autoload.php';
             <tr>
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
-          <div style="font-family: "Raleway",sans-serif; line-height: 140%; text-align: left; word-wrap: break-word;">
-            <p style="line-height: 140%;">Nat.</p>
+          <div style="font-family: "Raleway",sans-serif; line-height: 140%; text-align: justify; word-wrap: break-word;">
+            <p style="line-height: 140%;"></p>
         <p style="line-height: 140%;">Denaro Link.</p>
         <p style="line-height: 140%;"></p>
-        <p style="line-height: 140%;"><strong>P.S.</strong> Over the next month, we will send you some real-life success stories of clients we have helped navigate the complex Centrelink system to get their fair share of entitlements.</p>
+        <p style="line-height: 140%; text-align: justify;"><strong>P.S.</strong> Over the next month, we will send you some real-life success stories of clients we have helped navigate the complex Centrelink system to get their fair share of entitlements.</p>
           </div>
         
               </td>
@@ -262,7 +263,7 @@ require './vendor/autoload.php';
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
           <div style="font-family: "Raleway",sans-serif; font-size: 9px; line-height: 140%; text-align: justify; word-wrap: break-word;">
-            <p style="line-height: 140%;">You received this email because you have downloaded a resource from our website.This email contains information that is general in nature and does not take into account the objectives, financial situation or needs of any particular person. It does not represent legal. tax. or personal advice and should not be relied on as such. You should obtain financial advice relevant to your circumstances before making any decisions.</p>
+            <p style="line-height: 140%; text-align: justify;font-size: 9px;">You received this email because you have downloaded a resource from our website.This email contains information that is general in nature and does not take into account the objectives, financial situation or needs of any particular person. It does not represent legal, tax, or personal advice and should not be relied on as such. You should obtain financial advice relevant to your circumstances before making any decisions.</p>
           </div>
         
               </td>
@@ -276,7 +277,7 @@ require './vendor/autoload.php';
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
           <div style="font-family: "Raleway",sans-serif; font-size: 9px; line-height: 140%; text-align: justify; word-wrap: break-word;">
-            <p style="line-height: 140%;">Denaro Wealth Pty Ltd, ABN 23 625 686 464. Corporate Authorised Representative (NO. 1263750) of Lifespan Financial Planning Pty Ltd ABN 23 065 921 735, Australian Financial Services Licensee and Australian Credit Licence No. 229892.</p>
+            <p style="line-height: 140%; text-align: justify; font-size: 9px;">Denaro Wealth Pty Ltd, ABN 23 625 686 464. Corporate Authorised Representative (NO. 1263750) of Lifespan Financial Planning Pty Ltd ABN 23 065 921 735, Australian Financial Services Licensee and Australian Credit Licence No. 229892.</p>
           </div>
         
               </td>
@@ -290,7 +291,7 @@ require './vendor/autoload.php';
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
           <div style="font-family: "Raleway",sans-serif; font-size: 9px; line-height: 140%; text-align: justify; word-wrap: break-word;">
-            <p style="line-height: 140%;">Ground Floor, Corporate One, 84 Hotham Street, Preston VIC 3072.</p>
+            <p style="line-height: 140%; font-size: 9px;">Ground Floor, Corporate One, 84 Hotham Street, Preston VIC 3072.</p>
           </div>
         
               </td>
@@ -304,7 +305,7 @@ require './vendor/autoload.php';
               <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                 
           <div style="font-family: "Raleway",sans-serif; font-size: 13px; line-height: 140%; text-align: justify; word-wrap: break-word;">
-            <p style="line-height: 140%;"><span style="color: #2dc26b; line-height: 18.2px;"><a rel="noopener" href="https://denarowealth.com.au/book-chat" target="_blank" style="color: #2dc26b;">unsubscribe.</a></span></p>
+            <p style="line-height: 140%;text-align: justify;"><span style="color: #2dc26b; line-height: 18.2px;"><a rel="noopener" href="https://denarowealth.com.au/book-chat" target="_blank" style="color: #2dc26b;">unsubscribe.</a></span></p>
           </div>
         
               </td>

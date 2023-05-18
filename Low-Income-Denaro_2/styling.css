@@ -293,3 +293,27 @@ button {
 .hello{
     border: none;
 }
+
+.sameFont{
+    font-style: normal !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 29px !important;
+    font-family: 'Fira Sans Condensed', sans-serif !important;
+}
+
+.sameFont1{
+    font-style: normal !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 17px !important;
+    font-family: 'Fira Sans Condensed', sans-serif !important;
+}
+
+.sameFont2{
+    font-style: normal !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+    font-family: 'Montserrat', sans-serif !important;
+}

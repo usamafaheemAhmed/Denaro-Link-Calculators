@@ -28,7 +28,7 @@ require './vendor/autoload.php';
       // print_r($pdfData);
       
       
-      file_put_contents('./LIHC Card Calculator Report.pdf', $pdfData);
+      file_put_contents('./Low-Income-Denaro.pdf', $pdfData);
 
       // die;
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
@@ -45,7 +45,7 @@ require './vendor/autoload.php';
         $mail->setFrom('denarolink@denarowealth.com.au', "Admin Denarolink");
         $mail->addAddress($email, $name);     // Add a recipient
         $mail->addBCC('denarolink@denarowealth.com.au');
-        $mail->Subject = 'LIHC Card Calculator Report';
+        $mail->Subject = 'Summary From Low Income Health Care Card Calculator';
         $mail->Body = '
         <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -328,7 +328,7 @@ require './vendor/autoload.php';
         </body>
         
         </html>';
-        $mail->AddEmbeddedImage('./LIHC Card Calculator Report.pdf',"pdf");
+        $mail->AddEmbeddedImage('./Low-Income-Denaro.pdf',"pdf");
 
         $mail->send();
         echo 'Message has been sent';
