@@ -73,7 +73,8 @@ function PDFFile3(){
       doc.setTextColor(101, 101, 101);
       doc.setFontSize(14); 
       doc.setFontStyle('bold');
-      doc.text(170, 100,'You don’t meet the relevant income test');
+      let data3 = document.getElementById("incomeTest").innerHTML;
+      doc.text(310, 100,data3,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'center'});
 
       doc.text(307, 280,'The Commonwealth Seniors Health Care Card is available to individuals who reach Commonwealth Seniors Health Care Card age but do not qualify for the Commonwealth Seniors Health Care Card or other Social Security or Veteran Affairs pensions or benefits.',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'center'});
       

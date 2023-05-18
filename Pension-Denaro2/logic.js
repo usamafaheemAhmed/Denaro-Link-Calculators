@@ -1,6 +1,5 @@
-
-
-let shof, shop, snhof, snhop, chof, chop, cnhof, cnhop, db_sfd, db_sfr, db_sod, db_sor, db_cfd, db_cfr, db_cod, db_cor, divFactor, redRate, sfort, sphar, spen, sclean, cfort, cphar, cpen, cclean;
+let shof, shop, snhof, snhop, chof, chop, cnhof, cnhop, db_sfd, db_sfr, db_sod, db_sor, db_cfd, db_cfr, db_cod, db_cor,
+    divFactor, redRate, sfort, sphar, spen, sclean, cfort, cphar, cpen, cclean;
 let sifp, sipp, srf, cifp, cipp, crf, wfn, whfn;
 
 $(document).ready(function () {
@@ -28,8 +27,8 @@ $(document).ready(function () {
         type: 'GET',
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
-        success: function(result) {
-            console.log(result,"result");
+        success: function (result) {
+            console.log(result, "result");
             let a = result.a;
             let s = a.a1;
             let c = a.a2;
@@ -43,7 +42,7 @@ $(document).ready(function () {
             c = fd.a2
             db_sfd = parseFloat(s.fd), db_sfr = parseFloat(s.fr), db_sod = parseFloat(s.od), db_sor = parseFloat(s.or);
             db_cfd = parseFloat(c.fd), db_cfr = parseFloat(c.fr), db_cod = parseFloat(c.od), db_cor = parseFloat(c.or);
-            
+
             let rB = result.reduced_by;
             divFactor = parseFloat(rB.factor);
             redRate = parseFloat(rB.rate);
@@ -53,6 +52,8 @@ $(document).ready(function () {
             c = AP.a2;
             sfort = parseFloat(s.fort), sphar = parseFloat(s.phar), spen = parseFloat(s.pen), sclean = parseFloat(s.clean);
             cfort = parseFloat(c.fort), cphar = parseFloat(c.phar), cpen = parseFloat(c.pen), cclean = parseFloat(c.clean);
+
+            // alert(sfort);
 
             let IT = result.income_test;
             s = IT.a1;
@@ -122,6 +123,7 @@ function getFormattedDate(inputFormat) {
     function pad(s) {
         return s < 10 ? "0" + s : s;
     }
+
     var d = new Date(inputFormat);
     return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join("/");
 }
@@ -234,6 +236,7 @@ function loanOnFunds(number) {
     if (number == 0) $("#loanOnFundsDiv").hide(500);
     else $("#loanOnFundsDiv").show(500);
 }
+
 function otherPropertyOptions(number) {
     if (number == 0) $(".secondHome").hide(500);
     else $(".secondHome").show(500);
@@ -243,6 +246,7 @@ function propertyLoan(number) {
     if (number == 0) $(".propertyLoan").hide(500);
     else $(".propertyLoan").show(500);
 }
+
 function otherIncomeOptions(number) {
     if (number == 0) $(".otherIncomeOptions").hide(500);
     else $(".otherIncomeOptions").show(500);
@@ -257,22 +261,27 @@ function rentOptions(number) {
     if (number == 0) $(".rentOptions").hide(500);
     else $(".rentOptions").show(500);
 }
+
 function gFatherIncomeOptions(number) {
     if (number == 0) $(".gfatherIncomeOptions").hide(500);
     else $(".gfatherIncomeOptions").show(500);
 }
+
 function yourOtherIncomeOptions(number) {
     if (number == 0) $(".yourOtherIncomeOptions").hide(500);
     else $(".yourOtherIncomeOptions").show(500);
 }
+
 function workingIncomeOptions(number) {
     if (number == 0) $(".workingIncomeOptions").hide(500);
     else $(".workingIncomeOptions").show(500);
 }
+
 var isEligible,
     isWifeEligible,
     clientWorkBonus = 0,
     partnerWorkBonus = 0;
+
 function getResults() {
     var assetLowerLimit = 0,
         incomeLowerLimit = 0,
@@ -298,15 +307,15 @@ function getResults() {
         clientPayment = 0,
         pensionReductionPA = 0,
         incomeReductionPA = 0;
- 
+
 
     let homeLoanAmount = document.getElementById("homeLoan").value;
     $("#homeLoanAmount").text("$" + homeLoanAmount);
 
-    let relationshipStatus = $('input[name="relationshipStatus"]:checked').val(); 
+    let relationshipStatus = $('input[name="relationshipStatus"]:checked').val();
     let husbandDOB = $('input[id="husbandDOB"]').val();
     let wifeDOB = $('input[id="wifeDOB"]').val();
-    let homeOwner = $('input[name="home"]:checked').val(); 
+    let homeOwner = $('input[name="home"]:checked').val();
 
     if (relationshipStatus === "1") {
         let rel, hOwner;
@@ -317,22 +326,22 @@ function getResults() {
 
         isEligible = verifyAge(husbandDOB);
 
-          if (homeOwner === "1") {
+        if (homeOwner === "1") {
             assetLowerLimit = shof;
-              assetHigherLimit = shop;
+            assetHigherLimit = shop;
             hOwner = "Yes";
         } else {
             assetLowerLimit = snhof;
-                assetHigherLimit = snhop;
+            assetHigherLimit = snhop;
             hOwner = "No";
         }
 
         incomeLowerLimit = sifp * 26;
         incomeHigherLimit = sipp * 26;
-        
+
         // alert(incomeLowerLimit);
         // alert(incomeHigherLimit);
-        
+
         totalAssets = getSinglePersonAssets(relationshipStatus);
         totalIncome = getSinglePersonIncome(relationshipStatus);
 
@@ -354,7 +363,7 @@ function getResults() {
 
         allPayment += cleanEnergy;
 
-        fortnightPayment = allPayment / 26;
+        fortnightPayment = assetHigherLimit <= totalAssets || incomeHigherLimit <= totalIncome ? 0 : allPayment / 26;
 
         document.getElementById("isHomeOwner").innerHTML = hOwner;
         document.getElementById("relationship").innerHTML = rel;
@@ -369,9 +378,9 @@ function getResults() {
 
         document.getElementById("IAssessable").innerHTML = toComma(totalIncome);
         document.getElementById("IExcess").innerHTML = toComma(excessIncome);
-        
+
         // --------------------------------TesT--------------------------------
-                document.getElementById("isHomeOwner2").innerHTML = hOwner;
+        document.getElementById("isHomeOwner2").innerHTML = hOwner;
         document.getElementById("relationship2").innerHTML = rel;
 
         document.getElementById("ALower2").innerHTML = toComma(assetLowerLimit);
@@ -384,18 +393,21 @@ function getResults() {
 
         document.getElementById("IAssessable2").innerHTML = toComma(totalIncome);
         document.getElementById("IExcess2").innerHTML = toComma(excessIncome);
-        
-        
+
+
         // --------------------------------------------------------------------
-        
-        
+
 
         if (isEligible === "Yes") {
-                $(".fortnight").text(toComma(fortnightPayment));
+            $(".fortnight").text(toComma(fortnightPayment));
             $(".fortnightAnnual").text(toComma(fortnightPayment * 26));
+
+            alert("fortnightPayment22=" + fortnightPayment)
+            alert("fortnightPaymentCombined22=" + fortnightPaymentCombined)
+
             $("#optionalContent").hide();
         } else {
-               $(".fortnight").text(0);
+            $(".fortnight").text(0);
             $(".fortnightAnnual").text(0);
             $("#optionalContent").hide();
         }
@@ -415,20 +427,16 @@ function getResults() {
 
         if (homeOwner === "1") {
             assetLowerLimitCombined = chof;
-               assetHigherLimitCombined = chop;
+            assetHigherLimitCombined = chop;
             hOwner2 = "Yes";
         } else {
             assetLowerLimitCombined = cnhof;
-               assetHigherLimitCombined = cnhop;
+            assetHigherLimitCombined = cnhop;
             hOwner2 = "No";
         }
 
         let incomeLowerLimitCombined = cifp * 26;
         let incomeHigherLimitCombined = cipp * 26;
-
-        // alert(incomeHigherLimitCombined);
-        // alert(incomeLowerLimitCombined);
-
 
         totalAssetsCombined = getSinglePersonAssets(relationshipStatus);
         totalIncomeCombined = getSinglePersonIncome(relationshipStatus);
@@ -455,7 +463,7 @@ function getResults() {
 
         allPayment += cleanEnergy;
 
-        fortnightPaymentCombined = allPayment;
+        fortnightPaymentCombined = assetHigherLimitCombined <= totalAssetsCombined || incomeHigherLimitCombined <= totalIncomeCombined ? 0 : allPayment;
 
         document.getElementById("relationship").innerHTML = rel2;
         document.getElementById("isHomeOwner").innerHTML = hOwner2;
@@ -486,15 +494,17 @@ function getResults() {
         document.getElementById("IExcess2").innerHTML = toComma(excessIncomeCombined);
 
         if (isEligible === "Yes" && isWifeEligible === "Yes") {
-                 $(".fortnight").text(toComma((fortnightPaymentCombined / 26) * 2));
+            $(".fortnight").text(toComma((fortnightPaymentCombined / 26) * 2));
             $(".fortnightAnnual").text(toComma(fortnightPaymentCombined * 2));
+            alert("fortnightPayment444=" + fortnightPayment)
+            alert("fortnightPaymentCombined5555=" + fortnightPaymentCombined)
             $("#optionalContent").hide();
         } else if (isEligible === "Yes" || isWifeEligible === "Yes") {
-                $(".fortnight").text(toComma(fortnightPaymentCombined / 26));
+            $(".fortnight").text(toComma(fortnightPaymentCombined / 26));
             $(".fortnightAnnual").text(toComma(fortnightPaymentCombined));
             $("#optionalContent").hide();
         } else {
-               $(".fortnight").text(toComma(0));
+            $(".fortnight").text(toComma(0));
             $(".fortnightAnnual").text(toComma(0));
             $("#optionalContent").hide();
         }
@@ -505,6 +515,7 @@ let financialAssets = 0,
     wifeFinancialAssets = 0;
 let superAssets = 0,
     wifeSuperAssets = 0;
+
 function getSinglePersonAssets(status) {
     let cars = parseFloat(document.getElementById("husbandCars").value.replace("$", "").replace(/,/g, "")) || 0;
     let wifeCars = parseFloat(document.getElementById("wifeCars").value.replace("$", "").replace(/,/g, "")) || 0;
@@ -717,6 +728,7 @@ function getSinglePersonIncome(status) {
         return totalIncomeCombined;
     }
 }
+
 function verifyAge(dob) {
     var today = new Date();
     var birthDate = new Date(dob);
@@ -753,119 +765,107 @@ function cancelModal() {
 }
 
 function getPDF() {
-    
-    document.getElementById("emailSubmit").innerHTML= "Sending...";
-    setTimeout(function(){ emailSending(); }, 500);
+
+    document.getElementById("emailSubmit").innerHTML = "Sending...";
+    setTimeout(function () {
+        emailSending();
+    }, 500);
 }
 
-function emailSending(){
+function emailSending() {
     let nameClient = document.getElementById("name").value;
     let lastName = document.getElementById("lastName").value;
     let emailClient = document.getElementById("email").value;
 
-      $("#result").addClass("active1");
-    
+    $("#result").addClass("active1");
 
-  if (!nameClient || !emailClient) {
- 
-    alert("Please fill name and email correctly.");
-    document.getElementById("emailSubmit").innerHTML= "Send";
-    return false;
-  }
-  else{
-    let validateEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if(emailClient.match(validateEmail)){
-
-    }else{
-      alert("Please Enter Valid Email");
-      document.getElementById("emailSubmit").innerHTML= "Send";
-      return false;
+    if (!nameClient || !emailClient) {
+        alert("Please fill name and email correctly.");
+        return false;
     }
-  }
     step(11);
     $("#PDF-content").hide();
     getResults();
     $("#staticBackdrop").modal("hide");
 
-    
+
     $("#loaderDiv").show();
     $("#progressbarDiv").hide();
     $("#optionalContent").hide();
     $("#buttons").show();
-    
+
     $(".title").hide();
 
 
-        let newData = {
-        name : nameClient,
+    let newData = {
+        name: nameClient,
         lastName: lastName,
         email: emailClient,
         CalName: 'Pension-Denaro',
     }
 
-        $.ajax({
-            type: "POST",
-            url: "./mailchimp.php",
-            data: newData,
-            success: function (data) {
-                console.log(data);
-                // alert(data);
-            },
-            error: function (error) {
-                console.log(error+"  : error");
-                // alert(error+" "+mailChimpErrorFlag);
-            },
-        });
-        
-            // alert("usama faheem ahemd");
+    $.ajax({
+        type: "POST",
+        url: "./mailchimp.php",
+        data: newData,
+        success: function (data) {
+            console.log(data);
+            // alert(data);
+        },
+        error: function (error) {
+            console.log(error + "  : error");
+            // alert(error+" "+mailChimpErrorFlag);
+        },
+    });
 
-            $("html, body").animate(
-                {
-                    scrollTop: $("#loaderDiv").offset().top,
-                },
-                300
-            );
+    // alert("usama faheem ahemd");
 
-            let pdf = PDFFile();
-            // alert(pdf);
-            
-            // alert("usama faheem ahemd");
-            
-            
-            let data = {
-                nameClient: nameClient,
-                emailClient: emailClient,
-                pdfFile: pdf, 
-            };
+    $("html, body").animate(
+        {
+            scrollTop: $("#loaderDiv").offset().top,
+        },
+        300
+    );
+
+    let pdf = PDFFile();
+    // alert(pdf);
+
+    // alert("usama faheem ahemd");
 
 
-                $.ajax({
-                    type: "POST",
-                    url: "mail.php",
-                    data: data,
-                    success: function (data) {
-                        console.log(data);
-                        alert("Email has been sent successfully!");
-                        $("#loaderDiv").hide();
-                        $("#progressbarDiv").show();
-                        $("#optionalContent").hide();
-                        $("#buttons").show();
-                        $("#PDF-content").hide();
-                        $(".title").hide();
-                        document.getElementById("emailSubmit").innerHTML= "Send";
-                    },
-                    error: function (error) {
-                        console.log("Error");
-                        alert(error.responseText);
-                        $("#loaderDiv").hide();
-                        $("#progressbarDiv").show();
-                        $("#optionalContent").hide();
-                        $("#buttons").show();
-                        $("#PDF-content").hide();
-                        $(".title").hide();
-                        document.getElementById("emailSubmit").innerHTML= "Send";
-                    },
-                });
+    let data = {
+        nameClient: nameClient,
+        emailClient: emailClient,
+        pdfFile: pdf,
+    };
+
+
+    $.ajax({
+        type: "POST",
+        url: "mail.php",
+        data: data,
+        success: function (data) {
+            console.log(data);
+            alert("Email has been sent successfully!");
+            $("#loaderDiv").hide();
+            $("#progressbarDiv").show();
+            $("#optionalContent").hide();
+            $("#buttons").show();
+            $("#PDF-content").hide();
+            $(".title").hide();
+            // document.getElementById("emailSubmit").innerHTML= "Send";
+        },
+        error: function (error) {
+            console.log("Error");
+            alert(error.responseText);
+            $("#loaderDiv").hide();
+            $("#progressbarDiv").show();
+            $("#optionalContent").hide();
+            $("#buttons").show();
+            $("#PDF-content").hide();
+            $(".title").hide();
+        },
+    });
 
 }
 
@@ -876,10 +876,7 @@ function setProgressBar(curStep) {
 }
 
 
-
-
-
-function mainCalculate(){
+function mainCalculate() {
     document.getElementById("frontPage").classList.add("d-none");
     document.getElementById("mainCalculator").classList.remove("d-none");
 }
