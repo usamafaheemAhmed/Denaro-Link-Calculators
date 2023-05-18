@@ -275,11 +275,12 @@ deemingRatesBalance = Number(deeming_rates_balance_deeming_rates/100); //2.25%
       incomeThreshold = 92416;
     }
 
+    
     getIncome(relationshipStatus, husbandDOB, wifeDOB, deemedIncomeThreshold);
   } else {
     
     // putting first_deemed entry two from deemed_income_thresholds table
-    deemedIncomeThreshold = 89000;
+    deemedIncomeThreshold = deemed_income_thresholds_first_deemed2;
     // deemedIncomeThreshold = deemed_income_thresholds_first_deemed2;
     incomeThreshold = 92416;
 
