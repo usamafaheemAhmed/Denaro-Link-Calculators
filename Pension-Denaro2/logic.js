@@ -402,8 +402,8 @@ function getResults() {
             $(".fortnight").text(toComma(fortnightPayment));
             $(".fortnightAnnual").text(toComma(fortnightPayment * 26));
 
-            alert("fortnightPayment22=" + fortnightPayment)
-            alert("fortnightPaymentCombined22=" + fortnightPaymentCombined)
+            // alert("fortnightPayment22=" + fortnightPayment)
+            // alert("fortnightPaymentCombined22=" + fortnightPaymentCombined)
 
             $("#optionalContent").hide();
         } else {
@@ -496,8 +496,8 @@ function getResults() {
         if (isEligible === "Yes" && isWifeEligible === "Yes") {
             $(".fortnight").text(toComma((fortnightPaymentCombined / 26) * 2));
             $(".fortnightAnnual").text(toComma(fortnightPaymentCombined * 2));
-            alert("fortnightPayment444=" + fortnightPayment)
-            alert("fortnightPaymentCombined5555=" + fortnightPaymentCombined)
+            // alert("fortnightPayment444=" + fortnightPayment)
+            // alert("fortnightPaymentCombined5555=" + fortnightPaymentCombined)
             $("#optionalContent").hide();
         } else if (isEligible === "Yes" || isWifeEligible === "Yes") {
             $(".fortnight").text(toComma(fortnightPaymentCombined / 26));

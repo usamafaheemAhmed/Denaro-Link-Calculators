@@ -88,7 +88,7 @@
 
     doc.text(60, 280,'Centrelink will assess you both under the Asset Test and Income Test and the one that');
     doc.text(67, 300,'provides the lower result will be the actual payment you receive. The payments above');
-    doc.text(155, 320,'include any supplements (pension and clean energy).');
+    doc.text(155, 320,'include any supplements (pension and energy).');
     
     doc.text(70, 350,'The estimated entitlements are based on the Information you have entered into this');
     doc.text(170, 370,'calculator and should only be used as a guide.');
@@ -369,12 +369,12 @@
     doc.setTextColor(54, 180, 70);
     doc.setFontSize(18);
     doc.setFontStyle('bold');
-    doc.text(55, 255,'THE ASSET TEST');
+    doc.text(55, 255,'THE ASSETS TEST');
     
     doc.setFontSize(13);
     doc.setTextColor(101, 101, 101);
     doc.setFontStyle('normal');
-    doc.text(55, 285,'The asset test thresholds are shown in the table below For every $1,000 of assets above the lower limits, your fortnightly pension reduces by $3.00 per fortnight.',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}  );
+    doc.text(55, 285,'The assets test thresholds are shown in the table below For every $1,000 of assets above the lower limits, your fortnightly pension reduces by $3.00 per fortnight.',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}  );
     doc.text(55, 340,'Refer to:',{lineHeightFactor: 1.5, align: 'justify'}  );
     doc.text(55, 380,'Assets can include:'  );
 
@@ -385,10 +385,10 @@
     doc.text(77, 500,'•  Real property');
     doc.text(77, 520,'•  Shares in private companies, discretionary trusts');
     doc.text(77, 540,'•  Long-term Annuities');
-    doc.text(77, 560,'•  licenses, for example fishing or taxi');
-    doc.text(77, 580,'•  surrender value of life insurance policies');
-    doc.text(77, 600,'•  collections for trading, investment or hobby purposes, and');
-    doc.text(77, 620,'•  Generally, any debt secured against an asset is deducted from the value of that      \tasset.' ,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
+    doc.text(77, 560,'•  Licenses, for example fishing or taxi');
+    doc.text(77, 580,'•  Surrender value of life insurance policies');
+    doc.text(77, 600,'•  Collections for trading, investment or hobby purposes, and');
+    doc.text(77, 620,'•   Generally, any debt secured against an asset is deducted from the value of that      \tasset.' ,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
 
 
     // doc.setFillColor(54, 180, 70);
@@ -473,13 +473,13 @@
         
         
         doc.setTextColor(0, 78, 153);
-        doc.textWithLink('https://www.humanservices.gov.au/individuals/enablers/income-test- pensions/30406',55, 200,{url:'https://www.humanservices.gov.au/individuals/enablers/income-test- pensions/30406'});  
+        doc.textWithLink('https://www.humanservices.gov.au/individuals/enablers/income-test-pensions/30406',55, 200,{url:'https://www.humanservices.gov.au/individuals/enablers/income-test-pensions/30406'});  
         
         doc.setTextColor(101, 101, 101);
         doc.text(55, 220,'Examples of assessable income include:',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}  );
         
         
-        doc.text(110, 250,'deemed income from financial investments, including money in superannuation funds if you have reached age pension age', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 250,'Deemed income from financial investments, including money in superannuation funds if you have reached age pension age', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 245, 2, 2, 'F');
 
@@ -487,35 +487,35 @@
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 285, 2, 2, 'F');
 
-        doc.text(110, 310,'gross employment income- earnings for work performed including wages, salaries, bonuses, penalty rates, overtime, commission or honoraria, and stipends including fringe benefits and amounts salary sacrificed into superannuation', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 310,'Gross employment income- earnings for work performed including wages, salaries, bonuses, penalty rates, overtime, commission or honoraria, and stipends including fringe benefits and amounts salary sacrificed into superannuation', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 308, 2, 2, 'F');
 
-        doc.text(110, 390,'net business income', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 390,'Net business income', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 385, 2, 2, 'F');
 
-        doc.text(110, 410,'distributions or dividends from private trusts and private companies', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 410,'Distributions or dividends from private trusts and private companies', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 405, 2, 2, 'F');
 
-        doc.text(110, 410,'distributions or dividends from private trusts and private companies', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 410,'Distributions or dividends from private trusts and private companies', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 405, 2, 2, 'F');
 
-        doc.text(110, 430,'real estate income[including net income or losses from rental property, and income from boarders and lodgers', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 430,'Real estate income (including net income or losses from rental property), and income from boarders and lodgers', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 425, 2, 2, 'F');
 
-        doc.text(110, 470,'reportable superannuation contributions', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 470,'Reportable superannuation contributions', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 465, 2, 2, 'F');
 
-        doc.text(110, 490,'income from outside Australia[including non-Australian pensions and other income from sources outside Australia', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 490,'Income from outside Australia (including non-Australian pensions) and other income from sources outside Australia', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 485, 2, 2, 'F');
 
-        doc.text(110, 530,'some lump sums', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(110, 530,'Some lump sums', { maxWidth: 440, lineHeightFactor: 1.5, align: 'justify'});
         doc.setFillColor(101, 101, 101);
         doc.ellipse(100, 525, 2, 2, 'F');
 
@@ -751,9 +751,9 @@
         
         doc.text(142, 390,'Upper Threshold',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
         
-        doc.text(137, 500,'Assessable Income',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(137, 500,'Assessable Assets',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
         
-        doc.text(150, 610,'Excess Income',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
+        doc.text(150, 610,'Excess Assets',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'});
 
 
       // right
@@ -1170,10 +1170,12 @@
 
     //   doc.save('Your_Estimated_Quote.pdf');
 
+    // var pdfData = doc.output('datauristring'); 
+    // window.open(pdfData);
 
 
-
-        var pdfData = doc.output('datauristring'); 
+   var pdfData = doc.output('datauristring');
+   
         return pdfData;
 
 }
