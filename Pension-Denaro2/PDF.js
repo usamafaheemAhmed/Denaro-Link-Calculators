@@ -363,7 +363,7 @@
     doc.textWithLink('https://www.humanservices.gov.au/individuals/enablers/assets/30621',115, 340,{url:'https://www.humanservices.gov.au/individuals/enablers/assets/30621'});  
     
     doc.setTextColor(101, 101, 101);
-    doc.text(55, 180,'These figures are currently adjusted for CPI on twice a year (every 6 months) and occur on the 20the of march and 20th September.',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}  );
+    doc.text(55, 180,'These figures are currently adjusted for CPI on twice a year (every 6 months) and occur on the 20th of March and 20th September.',{ maxWidth: 500, lineHeightFactor: 1.5, align: 'justify'}  );
 
 
     doc.setTextColor(54, 180, 70);

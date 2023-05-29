@@ -97,7 +97,14 @@ function PDFFile3(){
 
       doc.text(310, 120,data,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'center'});
 
-      doc.text(310, 140,data2,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'center'});
+      if($("#wifeEligible").is(":hidden")) {
+      
+  }
+      else {
+        doc.text(310, 140, data2, { maxWidth: 500, lineHeightFactor: 1.5, align: 'center' });   
+  }
+
+  
       // doc.text(100, 140, data,{ maxWidth: 500, lineHeightFactor: 1.5, align: 'center'});
       
       doc.text(270, 170,'Actual Income');
@@ -460,17 +467,16 @@ function PDFFile3(){
   
   
        
-         doc.save('Your_Estimated_Quote.pdf');
-  
-  
-  
-  
-  
-      // var pdfData = doc.output('datauristring'); 
-      // // console.log(pdfData);
-      // // return pdfData;
-      // window.open(pdfData);
+        //  doc.save('Your_Estimated_Quote.pdf');
       
+
+    var pdfData = doc.output('datauristring'); 
+    window.open(pdfData);
+
+
+  //  var pdfData = doc.output('datauristring');
+   
+  //  return pdfData;
  
   
   }

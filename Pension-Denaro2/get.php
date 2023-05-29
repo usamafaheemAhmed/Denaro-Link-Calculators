@@ -4,6 +4,10 @@ $servername = "premium279";
 $username = "denaxvft_nat";
 $password = "FahadxNatalino";
 $db="denaxvft_pension_calculator";
+// $servername = "localhost";
+// $username = "id20735726_admin";
+// $password = "Usama334422@";
+// $db="id20735726_pos_database";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$db);

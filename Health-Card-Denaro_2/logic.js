@@ -1,6 +1,9 @@
 
 let income_test_annual_income1, income_test_annual_income2,deemed_income_thresholds_first_deemed2,deemed_income_thresholds_first_deemed1
-,deeming_rates_first_deeming_rates,deeming_rates_balance_deeming_rates;
+    , deeming_rates_first_deeming_rates, deeming_rates_balance_deeming_rates;
+
+// let wifeHideShow = 1;
+
 
 $(document).ready(function () {
     $("#progressbar2").hide();
@@ -98,8 +101,11 @@ function format(input) {
 function relationship(rValue) {
     if (rValue == 1) {
         $("div.wife").hide(400);
+    //    wifeHideShow = 1;
+
     } else {
         $("div.wife").show(450);
+    //    wifeHideShow = 2;
     }
 }
 
@@ -291,7 +297,7 @@ function getResults() {
         document.getElementById("threshold").innerHTML = toComma(incomeThreshold);
         document.getElementById("incomeTest").innerHTML = incomeTest3;
         $('#wifeEligible').hide();
-        document.getElementById("wifeEligible").innerHTML = "You Partner is not eligible for the Commonwealth Seniors Health Care Card";
+        document.getElementById("wifeEligible").innerHTML = "Your Partner is not eligible for the Commonwealth Seniors Health Care Card";
     } else {
 
 
@@ -330,11 +336,11 @@ function getResults() {
         }
         if (incomeTest === 'Yes' && isWifeEligible === 'Yes') {
             $('#wifeEligible').show();
-            document.getElementById("wifeEligible").innerHTML = "You Partner is eligible for the Commonwealth Seniors Health Care Card";
+            document.getElementById("wifeEligible").innerHTML = "Your Partner is eligible for the Commonwealth Seniors Health Care Card";
 
         } else {
             $('#wifeEligible').show();
-            document.getElementById("wifeEligible").innerHTML = "You Partner is not eligible for the Commonwealth Seniors Health Care Card";
+            document.getElementById("wifeEligible").innerHTML = "Your Partner is not eligible for the Commonwealth Seniors Health Care Card";
 
         }
 
